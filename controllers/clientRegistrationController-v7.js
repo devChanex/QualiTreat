@@ -80,8 +80,8 @@ function addPatientPersonalInfo() {
 
         switchToTab1("tab2-tab");
     } else {
-        switchToTab1("tab2-tab");
-        // showToast("errorToast", msg);
+
+        showToast("errorToast", msg);
     }
 
 
@@ -89,7 +89,7 @@ function addPatientPersonalInfo() {
 }
 
 function validateHealthForm() {
-    switchToTab1("tab3-tab");
+
     let msg = "";
     let firstInvalidField = null;
 
