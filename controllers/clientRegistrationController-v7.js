@@ -379,6 +379,7 @@ function submitClientform(type) {
                 } else {
                     toastError(result);
                 }
+                logThis("Registration - Patient Registration", fd, result);
             }
         });
 
@@ -475,6 +476,7 @@ function submitMedicalHistoryAjax() {
             } else {
                 toastError(result);
             }
+            logThis("Registration - Medical History Submission", fd, result);
         },
         error: function (xhr, status, error) {
             toastError("An error occurred: " + error);
@@ -505,11 +507,12 @@ function submitConsentform() {
             if (result == "success") {
                 message += "Consent Successfully Added.";
                 toastSuccess(message);
-                // setTimeout(() => location.reload(), 3000);
+                setTimeout(() => location.reload(), 3000);
 
             } else {
                 toastError(result);
             }
+            logThis("Registration - Consent Submission", fd, result);
         }
     });
 }

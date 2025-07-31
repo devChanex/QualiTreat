@@ -34,6 +34,7 @@ function populatePatientNames() {
         success: function (result) {
             result = result.trim();
             document.getElementById("patients").innerHTML = result;
+
         }
     });
 }
@@ -96,6 +97,7 @@ function submitConsentform() {
             } else {
                 toastError(result);
             }
+            logThis("Registration - Ortho Waiver", fd, result);
         }
     });
 }

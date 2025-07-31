@@ -273,6 +273,7 @@ include_once("bars/properties.php");
             <script>
                 const dentistSignatures = <?php echo json_encode(array_combine($dentist, $dentistSignature)); ?>;
             </script>
+            <script src="controllers/activityLogsController.js"></script>
             <script src="controllers/waiverController-v2.js"></script>
 
 
