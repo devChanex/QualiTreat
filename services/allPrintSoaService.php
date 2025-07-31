@@ -41,8 +41,9 @@ class ServiceClass
                 <div class="col-lg-6" style="text-align:right;">Bringing you, your best smile!</div>
             </div>
             <div class="row">
-                <div class="col-lg-12">0927 B.F Gomez St. Purok 3 I Ibaba Sta.Rosa Laguna</div>
-                <div class="col-lg-12">Contact us: 09056325517 || 09471027111</div>
+                <div class="col-lg-12">Stall B Josefa St. Josefaville 1 Subd Brgy Malabanias
+                                        Angeles City Pampanga PH 2009</div>
+                <div class="col-lg-12">0927-605-8418 / 0960-437-5938</div>
                 <hr>
                 <div class="col-lg-12" style="text-align:center;"><strong>Electronic Statement of Account - ESOA</strong></div>
             </div>
@@ -54,7 +55,7 @@ class ServiceClass
                            
                     </div>
                     <div class="col-md-6">
-                            Date :<strong>' . $row["date"] . '</strong>
+                            Date :<strong>' . date("m/d/Y", strtotime($row["date"])) . '</strong>
                            
                            
                     </div>
@@ -77,9 +78,9 @@ class ServiceClass
                 
 
                 <div class="col-lg-12">
-                <table class="table" width="100%" cellspacing="0" style="font-size:12px;">
+                <table class="table text-dark" width="100%" cellspacing="0" style="font-size:12px;">
 <thead>
-<tr>
+<tr style="color: black;">
 <th>Treatment</th>
 <th>Details</th>
 <th>Remarks</th>
@@ -100,7 +101,7 @@ class ServiceClass
                         while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
                             $total += $row2["price"];
                             echo '
-        <tr>
+        <tr style="color: black;">
         <td>' . $row2["treatment"] . '</td>
         <td>' . $row2["details"] . '</td>
         <td>' . $row2["remarks"] . '</td>
@@ -111,7 +112,7 @@ class ServiceClass
                         }
                         echo '
                         <strong>
-                        <tr>
+                        <tr style="color: black;">
                         <td colspan="3">Total</td>
                         <td>' . $total . '</td>
                         

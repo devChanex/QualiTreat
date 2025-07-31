@@ -26,17 +26,26 @@ class ServiceClass
 
 
 
-        $query = "SELECT count(name) as 'num' FROM hmo where status='Active'";
+        $query = "SELECT *
+          FROM treatmentsubpayment 
+          WHERE MONTH(paymentdate) = MONTH(CURDATE()) 
+            AND YEAR(paymentdate) = YEAR(CURDATE()) and tsubid in (select tsubid from treatmentsub)";
         $stmt = $this->conn->prepare($query);
 
         $stmt->execute();
-        $count = 0;
+        $amount = 0;
+        $creditcard = 0;
         if ($stmt->rowCount() > 0) {
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $count = $row["num"];
+                $amount += $row["amount"];
+                if ($row["paymenttype"] == "Credit Card") {
+                    $creditcard += $row["amount"];
+                }
             }
         }
-        return $count;
+
+        $subcharge = $creditcard * .04;
+        return date('F') . ' - ' . number_format($amount - $subcharge, 2);
     }
 
 }

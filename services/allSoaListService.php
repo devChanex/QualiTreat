@@ -35,14 +35,14 @@ class ServiceClass
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $fullname = $row["lname"] . ', ' . $row["fname"] . ' ' . $row["mdname"];
                 echo '
-                <tr>
+                <tr style="color: black;">
                 <td>' . $row["soaid"] . '</td>
 
                 <td>' . $fullname . '</td>
                 <td>' . $row["dentist"] . '</td>
                 <td>' . $row["treatment"] . '</td>
                 <td>' . $row["price"] . '</td>
-                <td>' . $row["date"] . '</td>
+                <td>' . date("Y/m/d", strtotime($row["date"])) . '</td>
                 <td align="center">';
 
 

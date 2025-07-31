@@ -1,4 +1,5 @@
 function add() {
+    var hmotype = document.querySelector('input[name="hmoType"]:checked').value;
     var name = document.getElementById("name").value;
     var accountnumber = document.getElementById("accountnumber").value;
     var birthdate = document.getElementById("birthdate").value;
@@ -8,6 +9,7 @@ function add() {
     var hmo = hmoOption.value;
     var validity = document.getElementById("validity").value;
     var benefit = document.getElementById("benefit").value;
+    var approvalCode = document.getElementById("approvalCode").value;
     var remarks = document.getElementById("remarks").value;
     var verification = document.getElementById("verification");
     var verificationStatus = verification.value;
@@ -24,7 +26,7 @@ function add() {
 
 
     if (msg == '') {
-        submitform(name, accountnumber, birthdate, company, contact, hmo, validity, benefit, remarks, verificationStatus, agent);
+        submitform(name, accountnumber, birthdate, company, contact, hmo, validity, benefit, remarks, verificationStatus, agent, hmotype, approvalCode);
     } else {
         showToast("errorToast", msg);
     }
@@ -33,7 +35,7 @@ function add() {
 
 }
 
-function submitform(name, accountnumber, birthdate, company, contact, hmo, validity, benefit, remarks, verificationStatus, agent) {
+function submitform(name, accountnumber, birthdate, company, contact, hmo, validity, benefit, remarks, verificationStatus, agent, hmotype, approvalCode) {
     var fd = new FormData();
     fd.append('name', name);
     fd.append('accountnumber', accountnumber);
@@ -45,8 +47,10 @@ function submitform(name, accountnumber, birthdate, company, contact, hmo, valid
     fd.append('benefit', benefit);
     fd.append('remarks', remarks);
     fd.append('verification', verificationStatus);
-
+    fd.append('approvalCode', approvalCode);
     fd.append('agent', agent);
+
+    fd.append('hmotype', hmotype);
 
     $.ajax({
         url: "services/hmoAddService.php",
