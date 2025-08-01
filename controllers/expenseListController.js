@@ -82,6 +82,7 @@ function submitCart() {
             fd.append(el.id, el.value);
         }
     });
+    $('#editExpenseModal').modal('hide');
 
     $.ajax({
         url: "services/upsertExpenseService.php",
@@ -97,7 +98,7 @@ function submitCart() {
                 } else {
                     toastSuccess("Expense Added Successfully");
                 }
-                $('#editExpenseModal').modal('hide');
+
                 getclientdata();
             } else {
                 console.log(result);
@@ -124,6 +125,7 @@ function deleteCart() {
             fd.append(el.id, el.value);
         }
     });
+    $('#deleteExpenseModal').modal('hide');
 
     $.ajax({
         url: "services/deleteExpenseService.php",
@@ -136,7 +138,7 @@ function deleteCart() {
             if (result == "success") {
 
                 toastSuccess("Expense deleted Successfully");
-                $('#deleteExpenseModal').modal('hide');
+
                 getclientdata();
             } else {
 
