@@ -61,7 +61,7 @@ error_reporting(0);
                             <input type="hidden" value="<?php echo $_GET['clientId']; ?>" id="clientId">
 
                             <div style="display: flex; align-items: center; margin-left: 50px;">
-                                <img src="img/ <?php echo $headerlogo; ?>" alt="Logo"
+                                <img src="img/<?php echo $headerlogo; ?>" alt="Logo"
                                     style="max-height: 100px; margin-right: 20px;">
                                 <div>
                                     <h4 style="margin-bottom: 5px; font-weight: bold;"> <?php echo $formheadername; ?>
