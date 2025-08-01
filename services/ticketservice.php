@@ -66,14 +66,14 @@ class ServiceClass
             <p>Ticket ID: " . $ticketid . " : Change value of column <strong> " . $column . " </strong> for table <strong> " . $table . "</strong> from current value <strong>" . $currentvalue . " </strong> to new value <strong>" . $newvalue . "</strong>. Date Requested : " . $date . "
             <br>
             Please select action:
-            <a href=\"https://system.smilesandmore.ph/support/index.php?action=1&ref=" . $ref . "&refname=" . $refname . "&ticketid=" . $ticketid . "&tablename=" . $table . "&column=" . $column . "&currentvalue=" . urlencode($currentvalue) . "&newvalue=" . urlencode($newvalue) . "\"><button>Approve</button></a>
-            <a href=\"https://system.smilesandmore.ph/support/index.php?action=2&ref=" . $ref . "&refname=" . $refname . "&ticketid=" . $ticketid . "&tablename=" . $table . "&column=" . $column . "&currentvalue=" . urlencode($currentvalue) . "&newvalue=" . urlencode($newvalue) . "\"><button>Decline</button></a>
+            <a href=\"https://system.qualitreatdentalclinic.ph/support/index.php?action=1&ref=" . $ref . "&refname=" . $refname . "&ticketid=" . $ticketid . "&tablename=" . $table . "&column=" . $column . "&currentvalue=" . urlencode($currentvalue) . "&newvalue=" . urlencode($newvalue) . "\"><button>Approve</button></a>
+            <a href=\"https://system.qualitreatdentalclinic.ph/support/index.php?action=2&ref=" . $ref . "&refname=" . $refname . "&ticketid=" . $ticketid . "&tablename=" . $table . "&column=" . $column . "&currentvalue=" . urlencode($currentvalue) . "&newvalue=" . urlencode($newvalue) . "\"><button>Decline</button></a>
             
             </body>
             </html>";
             $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            $headers .= 'From: <ServiceBot@smilesandmore.ph>' . "\r\n";
+            $headers .= 'From: <ServiceBot@qualitreatdentalclinic.ph>' . "\r\n";
             mail($_SESSION["supportemail"], "QualiTreat Dental Clinic Ticket#" . $ticketid, $msg, $headers);
 
 
