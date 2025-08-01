@@ -45,7 +45,7 @@ class ServiceClass
 
             }
             // Limit the number of values to how many placeholders you're planning to bind
-            $maxFields = 27; // change this based on how many fields you want to accept
+            $maxFields = 29; // change this based on how many fields you want to accept
             $keys = array_keys($data);
             $keys = array_slice($keys, 0, $maxFields);
 
