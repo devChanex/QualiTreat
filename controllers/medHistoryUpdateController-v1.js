@@ -144,6 +144,12 @@ function getMedicalFormValues() {
         nursing: document.querySelector('input[name="nursing"]:checked')?.value || null,
         birthControl: document.querySelector('input[name="birthControl"]:checked')?.value || null,
 
+        bloodType: document.getElementById("bloodType").value.trim() || null,
+        bloodPressure: document.getElementById("bloodPressure").value.trim() || null,
+
+        healthProblem: document.querySelector('input[name="healthProblem"]:checked')?.value || null,
+        healthProblemMedication: document.getElementById("healthProblemMedication").value.trim() || null,
+
         // Collect q1 - q27 in an array
         medicalHistory: Array.from({ length: 37 }, (_, i) => {
             const el = document.getElementById("q" + (i + 1));
@@ -187,6 +193,8 @@ function submitMedicalHistoryAjax() {
             } else {
                 toastError(result);
             }
+
+            logThis("Medical Form History Update", fd, result);
         },
         error: function (xhr, status, error) {
             toastError("An error occurred: " + error);
@@ -288,6 +296,7 @@ function submitform(clientId, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10,
             } else {
                 showToast("errorToast", result);
             }
+            logThis("Medical History Update", fd, result);
         }
     });
 }

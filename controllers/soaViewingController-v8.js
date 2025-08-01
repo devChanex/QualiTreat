@@ -76,12 +76,15 @@ function changeSignature() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("E-Soa Viewing - Change Signature", fd, result);
             if (result == "success") {
                 toastSuccess("Successfully Signed.");
                 loadSoa();
             } else {
                 toastError("An Error occured: " + result);
             }
+
+
         }
     });
 }
@@ -105,6 +108,7 @@ function createTicket(ref, currentvalue, column, table, refname) {
             type: 'POST',
             success: function (result) {
                 alert("Ticket has been created.");
+                logThis("E-Soa Viewing - Create Ticket", fd, result);
             }
         });
 
@@ -140,6 +144,7 @@ function submitPaymentForm() {
             contentType: false,
             type: 'POST',
             success: function (result) {
+                logThis("E-Soa Viewing - Add Payment", fd, result);
                 if (result == "success") {
 
                     document.getElementById("paymentForm").reset();
@@ -150,6 +155,8 @@ function submitPaymentForm() {
                 } else {
                     toastError("An Error occured: " + result);
                 }
+
+
             }
         });
 
@@ -174,6 +181,7 @@ function deletePayment(ref, amount) {
                 contentType: false,
                 type: 'POST',
                 success: function (result) {
+                    logThis("E-Soa Viewing - Delete Payment", fd, result);
                     if (result == 'Success') {
 
                         toastSuccess("Payment Deleted.");
@@ -181,6 +189,7 @@ function deletePayment(ref, amount) {
                     } else {
                         toastError("An Error occured: " + result);
                     }
+
                 }
             });
         }

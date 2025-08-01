@@ -40,6 +40,7 @@ function deleteMedicine(id) {
         type: 'POST',
         success: function (result) {
             result = result.trim();
+            logThis("Medicine List - Delete", fd, result);
             if (result == 'success') {
 
 
@@ -57,6 +58,7 @@ function deleteMedicine(id) {
 
 }
 function SaveMedicine() {
+
     var medid = document.getElementById("editTreatmentId").value;
     var genericname = document.getElementById("editGenericName").value;
     var dispense = document.getElementById("editDispense").value;
@@ -75,6 +77,8 @@ function SaveMedicine() {
         type: 'POST',
         success: function (result) {
             result = result.trim();
+            logThis("Medicine List - Save", fd, result);
+
             if (result == 'success') {
 
                 if (medid != '') {
@@ -83,7 +87,7 @@ function SaveMedicine() {
                     toastReload('successToast', "Succesfully Added.");
 
                 }
-                // location.reload();
+
             } else {
                 toastError(result);
             }

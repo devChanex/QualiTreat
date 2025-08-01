@@ -15,6 +15,9 @@ function updatePatientPersonalInfo() {
     var guardianOccupation = document.getElementById("guardianOccupation").value;
     var referredBy = document.getElementById("referredBy").value;
     var clientId = document.getElementById("clientid").value;
+    var height = document.getElementById("height").value;
+    var weight = document.getElementById("weight").value;
+
 
     var cStatus = document.getElementById("civilStatus");
     var civilStatus = cStatus.value;
@@ -73,7 +76,7 @@ function updatePatientPersonalInfo() {
     if (msg == '') {
         var confirmation = confirm("Are you sure you want to update this client profile?");
         if (confirmation) {
-            submitform(clientId, lastName, firstName, middleName, nickName, gender, age, birthday, occupation, homeAddress, contactNumber, guardianName, guardianOccupation, referredBy, civilStatus, religion, base64Image, hmo, cardNumber, company, emailAddress);
+            submitform(clientId, lastName, firstName, middleName, nickName, gender, age, birthday, occupation, homeAddress, contactNumber, guardianName, guardianOccupation, referredBy, civilStatus, religion, base64Image, hmo, cardNumber, company, emailAddress, height, weight);
         }
     } else {
         showToast("errorToast", msg);
@@ -110,7 +113,7 @@ function computeAge() {
         document.getElementById("age").value = age;
     }
 }
-function submitform(clientId, lastName, firstName, middleName, nickName, gender, age, birthday, occupation, homeAddress, contactNumber, guardianName, guardianOccupation, referredBy, civilStatus, religion, imageBlob, hmo, cardNumber, company, emailAddress) {
+function submitform(clientId, lastName, firstName, middleName, nickName, gender, age, birthday, occupation, homeAddress, contactNumber, guardianName, guardianOccupation, referredBy, civilStatus, religion, imageBlob, hmo, cardNumber, company, emailAddress, height, weight) {
     var fd = new FormData();
     fd.append('clientId', clientId);
     fd.append('lastName', lastName);
@@ -135,6 +138,8 @@ function submitform(clientId, lastName, firstName, middleName, nickName, gender,
 
     fd.append('cardNumber', cardNumber);
     fd.append('emailAddress', emailAddress);
+    fd.append('height', height);
+    fd.append('weight', weight);
     $.ajax({
         url: "services/clientProfileUpdateService.php",
         data: fd,
@@ -148,6 +153,7 @@ function submitform(clientId, lastName, firstName, middleName, nickName, gender,
             } else {
                 showToast("errorToast", result);
             }
+            logThis("Client Profile - Update", fd, result);
         }
     });
 }

@@ -1,10 +1,10 @@
-var interval = window.setInterval(function(){
+var interval = window.setInterval(function () {
     loginChecker();
-},5000);
+}, 5000);
 
 loginChecker();
 
-function loginChecker(){
+function loginChecker() {
 
     var fd = new FormData();
     $.ajax({
@@ -15,8 +15,8 @@ function loginChecker(){
         type: 'POST',
         success: function (result) {
             if (result == "logged") {
-               location.href="basecode.php";
-            }else{
+                location.href = "basecode.php";
+            } else {
                 console.log("not logged in");
             }
         }
@@ -28,18 +28,18 @@ function loginChecker(){
 
 function forgotPassword() {
     var x = confirm("Are you sure you want to reset your password?");
-    
-    if(x){
-    //BUSINESS LOGIC - VALIDATION OF REQUEST / RESPONSE
-    var username = document.getElementById("loginUser").value;
-    if (username == null || username == "") {
-        document.getElementById("forgotResult").innerHTML = "Please enter your username in the username field so we can identify your account.";
-    } 
-    else {
-        document.getElementById("forgotResult").innerHTML = "Processing...";
-        validateUsername(username);
+
+    if (x) {
+        //BUSINESS LOGIC - VALIDATION OF REQUEST / RESPONSE
+        var username = document.getElementById("loginUser").value;
+        if (username == null || username == "") {
+            document.getElementById("forgotResult").innerHTML = "Please enter your username in the username field so we can identify your account.";
+        }
+        else {
+            document.getElementById("forgotResult").innerHTML = "Processing...";
+            validateUsername(username);
+        }
     }
-}
 }
 
 function validateUsername(username) {
@@ -52,9 +52,10 @@ function validateUsername(username) {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("Forgot Password", fd, result);
             if (result == "recognized") {
                 document.getElementById("forgotResult").innerHTML = "Your account has been recognized. Please check your email.";
-            }else {
+            } else {
                 document.getElementById("forgotResult").innerHTML = "We cannot identify your account.";
             }
         }

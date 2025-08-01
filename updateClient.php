@@ -13,7 +13,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -89,6 +89,10 @@ error_reporting(0);
                                     <label for="nickName">Nickname</label>
                                     <input type="text" name="nickName" id="nickName" placeholder="Nickname"
                                         class="form-control mb-2" value="<?php echo $_GET['nick'] ?? ''; ?>">
+
+                                    <label for="height">Height</label>
+                                    <input type="text" name="height" id="height" placeholder="Height"
+                                        class="form-control mb-2" value="<?php echo $_GET['height'] ?? ''; ?>">
                                 </div>
 
                                 <!-- Demographics -->
@@ -118,6 +122,10 @@ error_reporting(0);
                                     <label for="emailAddress">Email Address</label>
                                     <input type="text" name="emailAddress" id="emailAddress" placeholder="Email Address"
                                         class="form-control mb-2" value="<?php echo $_GET['emailAddress'] ?? ''; ?>">
+
+                                    <label for="weight">Weight</label>
+                                    <input type="text" name="weight" id="weight" placeholder="Weight"
+                                        class="form-control mb-2" value="<?php echo $_GET['weight'] ?? ''; ?>">
                                 </div>
                             </div>
 
@@ -241,6 +249,7 @@ error_reporting(0);
             <script src="js/custom-v2.js"></script>
             <script src="controllers/logOutConroller.js"></script>
             <script src="controllers/sessionController.js"></script>
+            <script src="controllers/activityLogsController.js"></script>
             <script src="controllers/clientProfileUpdateController-v1.js"></script>
 
 </body>

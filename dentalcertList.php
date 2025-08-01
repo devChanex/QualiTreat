@@ -13,7 +13,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -122,19 +122,18 @@ error_reporting(0);
 
 
                                     <div style="text-align:center;margin:0px;">
-                                        <img src="img/white_logo_final.jpg"
+                                        <img src="img/<?php echo $headerlogo; ?>"
                                             style="max-width:250px; align-items:center" />
                                     </div>
 
                                     <p style="text-align: center; color: black; margin: 0;font-size:13px;">
-                                        Stall B Josefa St. Josefaville 1 Subd Brgy Malabanias<br>Angeles City Pampanga
-                                        PH 2009
+                                        <?php echo $formheaderaddress; ?>
 
                                     </p>
 
                                     <p style="text-align: center; color: black; margin: 0;font-size:13px;">
 
-                                        <strong>Contact Number:</strong> 0927-605-8418 / 0960-437-5938
+                                        <strong>Contact Number:</strong> <?php echo $contact; ?>
                                     </p>
 
 
@@ -356,6 +355,7 @@ error_reporting(0);
             <script src="js/custom-v2.js"></script>
             <script src="controllers/logOutConroller.js"></script>
             <script src="controllers/sessionController.js"></script>
+            <script src="controllers/activityLogsController.js"></script>
             <script src="controllers/dentalCertListController.js"></script>
             <!-- <script src="controllers/deleteClientProfileController.js"></script> -->
             <script src="js/sortable.js"></script>

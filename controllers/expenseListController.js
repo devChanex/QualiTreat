@@ -90,6 +90,7 @@ function submitCart() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("Expense List - Save", fd, result);
             if (result == "success") {
                 if (expenseid == "") {
                     toastSuccess("Expense Updated Successfully");
@@ -131,6 +132,7 @@ function deleteCart() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("Expense List - Delete", fd, result);
             if (result == "success") {
 
                 toastSuccess("Expense deleted Successfully");

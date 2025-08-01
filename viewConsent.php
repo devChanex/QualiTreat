@@ -13,7 +13,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -61,15 +61,14 @@ error_reporting(0);
                             <input type="hidden" value="<?php echo $_GET['clientid']; ?>" id="clientId">
 
                             <div style="display: flex; align-items: center; margin-left: 30px; margin-top:0px;">
-                                <img src="img/white_logo_final.jpg" alt="Logo"
+                                <img src="img/<?php echo $headerlogo; ?>" alt="Logo"
                                     style="max-height: 100px; margin-right: 20px;">
                                 <div>
-                                    <h4 style="margin-bottom: 5px; font-weight: bold;">Dr. Nikki Sarmiento Dental Care
-                                        Clinic</h4>
+                                    <h4 style="margin-bottom: 5px; font-weight: bold;"> <?php echo $formheadername; ?>
+                                    </h4>
                                     <p style="margin: 0;">
-                                        Stall B Josefa St. Josefaville 1 Subd Brgy Malabanias<br>
-                                        Angeles City Pampanga PH 2009<br>
-                                        0927-605-8418 / 0960-437-5938
+                                        <?php echo $formheaderaddress; ?><br>
+                                        <?php echo $businessContact ?>
                                     </p>
                                 </div>
                             </div>
@@ -131,6 +130,16 @@ error_reporting(0);
                                 <div style="width: 50%; display: flex; align-items: center;">
                                     <strong style="margin-right: 10px;">Referred By:</strong>
                                     <?php echo trim($_GET["refferedBy"]); ?>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-wrap: wrap; margin: 0 30px;">
+                                <div style="width: 50%; display: flex; align-items: center;">
+                                    <strong style="margin-right: 10px;">Height:</strong>
+                                    <?php echo trim($_GET["height"]); ?>
+                                </div>
+                                <div style="width: 50%; display: flex; align-items: center;">
+                                    <strong style="margin-right: 10px;">Weight:</strong>
+                                    <?php echo trim($_GET["weight"]); ?>
                                 </div>
                             </div>
 
@@ -338,7 +347,7 @@ error_reporting(0);
                                 <div class="copyright text-center my-auto">
 
                                     <a href="javascript:void(0)" class="btn btn-danger btn-icon-split"
-                                        onclick="window.location.href='consentList.php'">
+                                        onclick="window.location.href='clientProfileList.php'">
                                         <span class="icon text-white-50"><i class="fas fa-fw fa-times"></i></span>
                                         <span class="text">Back</span>
                                     </a>

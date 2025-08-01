@@ -33,6 +33,7 @@ function validateLogin(username, password) {
         success: function (result) {
             try {
                 var data = typeof result === "string" ? JSON.parse(result) : result;
+                logThis("Login - Access", fd, JSON.stringify(data));
                 if (data.result === "success") {
 
 
@@ -51,6 +52,7 @@ function validateLogin(username, password) {
                     document.getElementById("loginResult").innerHTML = "Invalid Username or Password.";
                 }
             } catch (e) {
+                logThis("Login - Access", fd, result);
                 document.getElementById("loginResult").innerHTML = "Unexpected server response.";
             }
         }

@@ -13,7 +13,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -76,10 +76,10 @@ error_reporting(0);
                         <div class="card-body" id="daterange">
                             <div>
                                 <div style=" text-align:left;">
-                                    <h2 style="margin:0; font-weight:bold; font-size: 1.5rem;">Smiles & More
+                                    <h2 style="margin:0; font-weight:bold; font-size: 1.5rem;">
+                                        <?php echo $formheadername; ?>
                                     </h2>
-                                    <div style="font-size:14px;">Stall B Josefa St. Josefaville 1 Subd Brgy Malabanias
-                                        Angeles City Pampanga PH 2009</div>
+                                    <div style="font-size:14px;"><?php echo $formheaderaddress; ?></div>
                                 </div>
                                 <hr>
                                 <div style="text-align:center;">

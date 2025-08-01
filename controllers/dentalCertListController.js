@@ -130,6 +130,7 @@ function submitCart() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("Dental Certificate - Save", fd, result);
             if (result == "success") {
                 if (rxid != "") {
                     toastSuccess("Dental Certificate Updated Successfully");
@@ -139,6 +140,7 @@ function submitCart() {
                 $('#editExpenseModal').modal('hide');
                 getclientdata();
             } else {
+
                 console.log(result);
                 toastError(result);
             }
@@ -166,6 +168,7 @@ function deleteCart() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("Dental Certificate - Delete", fd, result);
             if (result == "success") {
 
                 toastSuccess("Dental Certificate Deleted Successfully");

@@ -13,7 +13,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -169,6 +169,7 @@ error_reporting(0);
             <script src="js/sb-admin-2.min.js"></script>
             <script src="controllers/logOutConroller.js"></script>
             <script src="controllers/sessionController.js"></script>
+            <script src="controllers/activityLogsController.js"></script>
             <script src="controllers/getSoaListController.js"></script>
             <script src="js/custom-v2.js"></script>
             <script src="js/sortable.js"></script>

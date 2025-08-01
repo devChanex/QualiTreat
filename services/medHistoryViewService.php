@@ -515,13 +515,11 @@ class ServiceClass
                     echo '
                                         <!--9-->
                                         <div class="row">
-                                            <div class="col-lg-12 mb-2">
-                                                <label class="form-label fw-bold">9. For women only:</label>
-                                            </div>
+                                           
 
                                             <!-- Are you pregnant? -->
                                             <div class="col-lg-6 mb-3">
-                                                <label class="form-label mb-0">Are you pregnant?</label>
+                                                <label class="form-label mb-0">9. Are you pregnant?</label>
                                             </div>
                                             <div class="col-lg-6 mb-3">
                                                 <div class="form-check form-check-inline">
@@ -546,7 +544,7 @@ class ServiceClass
 
                                             <!-- Are you nursing? -->
                                             <div class="col-lg-6 mb-3">
-                                                <label class="form-label mb-0">Are you nursing?</label>
+                                                <label class="form-label mb-0">10. Are you nursing?</label>
                                             </div>
                                             <div class="col-lg-6 mb-3">
                                                 <div class="form-check form-check-inline">
@@ -571,7 +569,7 @@ class ServiceClass
 
                                             <!-- Are you taking birth control pills? -->
                                             <div class="col-lg-6 mb-3">
-                                                <label class="form-label mb-0">Are you taking birth control
+                                                <label class="form-label mb-0">11. Are you taking birth control
                                                     pills?</label>
                                             </div>
                                             <div class="col-lg-6 mb-3">
@@ -593,6 +591,113 @@ class ServiceClass
                     echo '>
                                                     <label class="form-check-label" for="birthControlNo">No</label>
                                                 </div>
+                                            </div>
+                                        </div>
+                                          <!--12-->
+                                        <div class="row">
+                                            <div class="col-lg-6 mb-3">
+                                                <label class="form-label mb-0">12. Blood Type?</label>
+                                            </div>
+                                            <div class="col-lg-6 mb-3">
+                                                <input type="text" name="bloodType" id="bloodType"
+                                                    placeholder="Please specify" class="form-control mb-2" value="'
+                    ;
+
+                    if ($row['bloodType'] === 'null' || empty($row['bloodType'])) {
+                        echo '';
+                    } else {
+                        echo htmlspecialchars($row['bloodType']);
+                    }
+                    echo
+
+
+
+                        '">
+                                            </div>
+                                        </div>
+
+                                        <!--13-->
+                                        <div class="row">
+                                            <div class="col-lg-6 mb-3">
+                                                <label class="form-label mb-0">13. Blood Pressure?</label>
+                                            </div>
+                                            <div class="col-lg-6 mb-3">
+                                                <input type="text" name="bloodType" id="bloodPressure"
+                                                    placeholder="Please specify" class="form-control mb-2" value="'
+                    ;
+
+                    if ($row['bloodPressure'] === 'null' || empty($row['bloodPressure'])) {
+                        echo '';
+                    } else {
+                        echo htmlspecialchars($row['bloodPressure']);
+                    }
+                    echo
+
+
+
+                        '">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <!-- Question Label -->
+                                            <div class="col-lg-6 mb-3">
+                                                <div class="d-flex align-items-center">
+                                                    <label class="form-label mb-0">14. Do you have health
+                                                        problems</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Yes/No Options -->
+                                            <div class="col-lg-6 mb-3">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="healthProblem"
+                                                        id="healthProblemYes" value="yes" ';
+                    if ($row['healthProblem'] === 'yes') {
+                        echo 'checked';
+                    }
+                    echo '
+
+                                                        
+                                                        onclick="toggleCondition(true,\'healthProblemMedication\')">
+                                                    <label class="form-check-label" for="underTreatmentYes">Yes</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="healthProblem"
+                                                        id="healthProblemNo" value="no"
+
+                                                        ';
+                    if ($row['healthProblem'] === 'no') {
+                        echo 'checked';
+                    }
+                    echo '
+                                                        onclick="toggleCondition(false,\'healthProblemMedication\')">
+                                                    <label class="form-check-label" for="underTreatmentNo">No</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Conditional Input Field -->
+                                            <div class="col-lg-12 mb-3">
+                                                <label for="healthProblemMedication" class="form-label">-If so, what
+                                                    medication
+                                                    are you taking?</label>
+                                                <input type="text" id="healthProblemMedication"
+                                                    name="healthProblemMedication" class="form-control"
+                                                    placeholder="Describe the condition" 
+                                                    
+                                                    value="'
+                    ;
+
+                    if ($row['healthProblemMedication'] === 'null' || empty($row['healthProblemMedication'])) {
+                        echo '';
+                    } else {
+                        echo htmlspecialchars($row['healthProblemMedication']);
+                    }
+                    echo
+
+
+
+                        '">
                                             </div>
                                         </div>
 

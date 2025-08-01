@@ -38,7 +38,7 @@ class ServiceClass
             }
 
             $clientId = $data['clientId'];
-            $maxFields = 25;
+            $maxFields = 28;
             $keys = array_keys($data);
             $keys = array_filter($keys, fn($key) => $key !== 'clientId');
             $keys = array_slice($keys, 0, $maxFields);
@@ -47,7 +47,7 @@ class ServiceClass
             $bindings = [];
 
             foreach ($keys as $index => $key) {
-                $placeholder = ':' . chr(97 + $index);
+                $placeholder = ':field' . ($index + 1);
                 $setClauses[] = "$key = $placeholder";
                 $bindings[$placeholder] = $data[$key];
             }

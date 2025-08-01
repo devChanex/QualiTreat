@@ -9,6 +9,7 @@ $footerlogo = "logo_transparent.png";
 $brandLogo = "logo_transparent_square2.png";
 $sidebarColor = "bg-purple";
 $superuser = "nikesarmiento";
+$businessContact = "09xxxxxx";
 $dentist = [
     "Dr. Ann Jeth D. Timbol"
 ];

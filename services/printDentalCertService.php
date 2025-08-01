@@ -27,7 +27,7 @@ class ServiceClass
     {
         try {
 
-
+            include_once('../bars/properties.php');
 
             $query = "select * from dentalcertificate where certid=:a";
             $stmt = $this->conn->prepare($query);
@@ -40,14 +40,14 @@ class ServiceClass
 
     <!-- Centered Logo and Clinic Name -->
     <div style="text-align: center; margin-bottom: 0.5em;">
-        <img src="img/white_logo_final.jpg" alt="Company Logo" style="height: 40px; display: inline-block; vertical-align: middle; margin-bottom: 0.3em;">
-        <div style="font-size: 20pt; font-weight: bold;">Smiles & More</div>
+        <img src="img/' . $headerlogo . '" alt="Company Logo" style="height: 40px; display: inline-block; vertical-align: middle; margin-bottom: 0.3em;">
+        <div style="font-size: 20pt; font-weight: bold;">' . $formheadername . '</div>
     </div>
 
     <!-- Centered Address and Contact Info -->
     <div style="text-align: center; margin-bottom: 1em;">
-        <div>Stall B Josefa St. Josefaville 1 Subd, Brgy Malabanias, Angeles City, Pampanga PH 2009</div>
-        <div>0927-605-8418 / 0960-437-5938</div>
+        <div>' . $formheaderaddress . '</div>
+        <div>' . $businessContact . '</div>
     </div>
 
     <hr style="margin: 1em 0;">

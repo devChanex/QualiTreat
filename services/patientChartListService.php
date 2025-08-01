@@ -25,7 +25,7 @@ class ServiceClass
     //DO NOT INCLUDE THIS CODE
     public function process($clientid)
     {
-        $superuser = "nikesarmiento";
+
 
 
         $query = "select a.soaid,tsubid,hmo,price,date,dentist,treatment,remarks,details,diagnosis,hmoaccredited from treatmentsoa a inner join treatmentsub b on a.soaid=b.soaid where a.clientid=:a order by Date";
@@ -170,7 +170,7 @@ class ServiceClass
   </button>
 ';
 
-                if ($_SESSION["username"] == $superuser) {
+                if ($_SESSION["account_type"] == 0 || $_SESSION["account_type"] == 100) {
                     echo '<button class="btn btn-danger" onclick="deleteTreatment(' . $row["soaid"] . ',' . $row["tsubid"] . ')">
     <i class="fas fa-trash"></i>
   </button>';

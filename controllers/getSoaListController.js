@@ -47,10 +47,12 @@ function updateSoa() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("E-Soa List - Update Details", fd, result);
             toastReload("successToast", "SOA Updated Successfully");
         },
 
         error: function (xhr, status, error) {
+            logThis("E-Soa List - Update Details", fd, status + " - " + error);
             toastError("Error occurred: " + status + " - " + error);
         }
     });

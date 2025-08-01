@@ -179,14 +179,12 @@ class ServiceClass
 
                                       <!-- 9. For women only -->
 <div style="margin: 10px 30px;">
-    <div style="font-weight: bold; margin-bottom: 8px;">
-        9. For women only:
-    </div>
+  
 
     <!-- Are you pregnant? -->
     <div style="display: flex; margin-bottom: 6px;">
         <div style="width: 50%; display: flex; align-items: center;">
-            Are you pregnant?
+           9. Are you pregnant?
         </div>
         <div style="width: 50%; display: flex; align-items: center;">
             <strong>' . (
@@ -199,7 +197,7 @@ class ServiceClass
     <!-- Are you nursing? -->
     <div style="display: flex; margin-bottom: 6px;">
         <div style="width: 50%; display: flex; align-items: center;">
-            Are you nursing?
+           10. Are you nursing?
         </div>
         <div style="width: 50%; display: flex; align-items: center;">
             <strong>' . (
@@ -212,7 +210,7 @@ class ServiceClass
     <!-- Are you taking birth control pills? -->
     <div style="display: flex; margin-bottom: 6px;">
         <div style="width: 50%; display: flex; align-items: center;">
-            Are you taking birth control pills?
+          11.  Are you taking birth control pills?
         </div>
         <div style="width: 50%; display: flex; align-items: center;">
             <strong>' . (
@@ -221,6 +219,38 @@ class ServiceClass
                     ) . '</strong>
         </div>
     </div>
+
+
+     <div style="display: flex; margin-bottom: 6px;">
+        <div style="width: 50%; display: flex; align-items: center;">
+          12.  Blood type?
+        </div>
+        <div style="width: 50%; display: flex; align-items: center;">
+            <strong>' .
+                        htmlspecialchars($row["bloodType"] ?? "<em>Not specified</em>")
+                        . '</strong>
+        </div>
+    </div>
+     <div style="display: flex; margin-bottom: 6px;">
+        <div style="width: 50%; display: flex; align-items: center;">
+          13.  Blood Pressure?
+        </div>
+        <div style="width: 50%; display: flex; align-items: center;">
+            <strong>' .
+                        htmlspecialchars($row["bloodPressure"] ?? "<em>Not specified</em>")
+                        . '</strong>
+        </div>
+    </div>
+<div style="display: flex;">
+    <div style="width: 50%;">14. Do you have health problems?</div>
+    <div style="width: 50%;"><strong>' . ($row["healthProblem"] === "yes" ? "Yes" : ($row["healthProblem"] === "no" ? "No" : "<em>Not specified</em>")) . '</strong></div>
+</div>
+
+<div style="display: flex; margin: 10px 30px;">
+    <div style="width: 50%;">-If so, what medication are you taking?</div>
+    <div style="width: 50%;"><strong>' . ($row["healthProblemMedication"] === "null" || empty($row["healthProblemMedication"]) ? "<em>None specified</em>" : htmlspecialchars($row["healthProblemMedication"])) . '</strong></div>
+</div>
+    
 </div>
 
 <hr style="margin: 10 30px;">

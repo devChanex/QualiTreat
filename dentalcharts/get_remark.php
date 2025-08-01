@@ -2,8 +2,8 @@
 $tooth = $_GET['tooth'];
 $clientId = (int) $_GET['clientid'];
 
-// $conn = new mysqli("localhost", "root", "", "sam_db");
-$conn = new mysqli("216.218.206.42", "smilesan_admin", "G[aZ=F,G*~OT", "smilesan_official");
+// $conn = new mysqli("localhost", "root", "", "qualitreat_db");
+$conn = new mysqli("216.218.206.42", "qualitre_admin", "wD?j{)4yY+UML&b#", "qualitre_sysdb");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

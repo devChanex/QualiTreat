@@ -248,13 +248,16 @@ function submitCart() {
         success: function (result) {
             if (result == "success") {
                 if (rxid != "") {
+                    logThis("Prescription - Update", fd, result);
                     toastSuccess("Prescription Updated Successfully");
                 } else {
+                    logThis("Prescription - Add", fd, result);
                     toastSuccess("Prescription Added Successfully");
                 }
                 $('#editExpenseModal').modal('hide');
                 getclientdata();
             } else {
+                logThis("Prescription - Add/Update", fd, result);
                 console.log(result);
                 toastError(result);
             }
@@ -282,6 +285,7 @@ function deleteCart() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("Prescription - delete", fd, result);
             if (result == "success") {
 
                 toastSuccess("Prescription Deleted Successfully");

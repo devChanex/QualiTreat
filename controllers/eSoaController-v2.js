@@ -271,12 +271,14 @@ function submitform(dentist, dates, time, clientid, total, hmo) {
             contentType: false,
             type: 'POST',
             success: function (result) {
-
+                logThis("Create SOA - Treatment", fd, result);
                 if (parseInt(result) > 0) {
                     submitSubSoa(result);
                 } else {
                     toastError(result);
                 }
+
+
 
             }
         });
@@ -308,6 +310,7 @@ function submitSubSoa(soaid) {
 
     }
 
+    toastRedirect("successToast", "E-SOA successfully submitted", "soaViewing.php?soaid=" + soaid);
 
 }
 
@@ -330,7 +333,8 @@ function submitSubSoatoService(treatment, diagnosis, details, remarks, price, cl
         contentType: false,
         type: 'POST',
         success: function (result) {
-            toastRedirect("successToast", "E-SOA successfully submitted", "soaViewing.php?soaid=" + soaid);
+
+            logThis("Create SOA - SubTreatment", fd, result);
         }
     });
 

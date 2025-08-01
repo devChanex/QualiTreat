@@ -22,8 +22,10 @@ function loadattachment() {
 
 function deletePhoto() {
     var id = document.getElementById("attachmentid").value;
+    var soaid = document.getElementById("soaid").value;
     var fd = new FormData();
     fd.append("id", id)
+    fd.append("soaid", soaid)
     $.ajax({
         url: "services/deleteAttachmentService.php",
         data: fd,
@@ -31,6 +33,7 @@ function deletePhoto() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("Attachment List - Deletion", fd, result);
             $('#photoModal').modal('hide');
             toastSuccess(result);
             loadattachment();
@@ -83,6 +86,7 @@ function capturePhoto() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("Attachment List - Add", fd, result);
             console.log(result);
             toastSuccess(result);
             loadattachment();
@@ -90,6 +94,7 @@ function capturePhoto() {
 
         },
         error: function (xhr, status, error) {
+            logThis("Attachment List - Add", fd, error + xhr.responseText);
             console.error("AJAX Error:", status, error);
             console.error("Response Text:", xhr.responseText);
             toastError("An error occurred while uploading the attachment." + error + xhr.responseText);

@@ -13,7 +13,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -63,8 +63,7 @@ error_reporting(0);
                                         class="btn btn-primary btn-sm btn-circle float-right" title="View Attachment"><i
                                             class="fas fa-paperclip"></i></a>
 
-                                    <button id="divPrinter" class="btn btn-warning btn-sm btn-circle float-right"
-                                        onclick="signature()"><i class="fas fa-check"></i></button>
+
                                 </div>
                                 <input type="hidden" id="soaid" value="<?php echo $_GET["soaid"]; ?>">
                                 <div class="card-body" id="bodyResult">
@@ -167,6 +166,7 @@ error_reporting(0);
             <script src="js/sb-admin-2.min.js"></script>
             <script src="controllers/logOutConroller.js"></script>
             <script src="controllers/sessionController.js"></script>
+            <script src="controllers/activityLogsController.js"></script>
             <script src="controllers/soaViewingController-v8.js"></script>
             <script src="controllers/divPrinterController-v1.js"></script>
             <script src="js/signature.js"></script>

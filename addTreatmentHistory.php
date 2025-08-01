@@ -13,7 +13,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,13 +59,12 @@ error_reporting(0);
                         <div class="card-body" id="bodyResult">
 
                             <div class="row">
-                                <div class="col-lg-6"><strong>Smiles & More</strong></div>
+                                <div class="col-lg-6"><?php echo $formheadername; ?></strong></div>
                                 <div class="col-lg-6" style="text-align:right;">Bringing you, your best smile!</div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12"> Stall B Josefa St. Josefaville 1 Subd Brgy Malabanias Angeles
-                                    City Pampanga PH 2009</div>
-                                <div class="col-lg-12">0927-605-8418 / 0960-437-5938</div>
+                                <div class="col-lg-12"> <?php echo $formheaderaddress; ?></div>
+
                                 <hr>
                                 <div class="col-lg-12" style="text-align:center;"><strong>Electronic Statement of
                                         Account - ESOA</strong></div>
@@ -239,6 +238,7 @@ error_reporting(0);
             <script src="js/sb-admin-2.min.js"></script>
             <script src="controllers/logOutConroller.js"></script>
             <script src="controllers/sessionController.js"></script>
+            <script src="controllers/activityLogsController.js"></script>
             <script src="controllers/eSoaController-v2.js"></script>
             <script src="controllers/divPrinterController-v1.js"></script>
             <script src="js/custom-v2.js"></script>

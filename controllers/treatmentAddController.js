@@ -1,23 +1,23 @@
-function addTreatment(){
-    console.log="aaa"
-    var treatment=document.getElementById("treatment").value;
-    var description=document.getElementById("description").value;
-   
- 
+function addTreatment() {
+    console.log = "aaa"
+    var treatment = document.getElementById("treatment").value;
+    var description = document.getElementById("description").value;
+
+
     document.getElementById("formResult").innerHTML = "";
     if (treatment == "") {
         document.getElementById("formResult").innerHTML = "Treatment is required.";
-    }else if(description==""){
+    } else if (description == "") {
         document.getElementById("formResult").innerHTML = "Treatment Description is required.";
-    }else{
-        submitform(treatment,description);
+    } else {
+        submitform(treatment, description);
     }
 
 
 
 }
 
-function submitform(treatment,description){
+function submitform(treatment, description) {
     var fd = new FormData();
     fd.append('treatment', treatment);
     fd.append('description', description);
@@ -28,15 +28,16 @@ function submitform(treatment,description){
         contentType: false,
         type: 'POST',
         success: function (result) {
-            result=result.trim();
+            result = result.trim();
+            logThis("Treatment - Add", fd, result);
             if (result == "success") {
-                document.getElementById("bodyResult").innerHTML ="<div class='row'><div class='col-lg-12' align='center'><a href='#' class='btn btn-success btn-circle btn-lg'><i class='fas fa-check'></i></a><br><br><h3>NEW TREATMENT SUCCESSFULLY ADDED</h3><button class='btn btn-primary' onclick='reloadPage();'>ADD NEW RECORD</button></div></div>";
-             }else {
+                document.getElementById("bodyResult").innerHTML = "<div class='row'><div class='col-lg-12' align='center'><a href='#' class='btn btn-success btn-circle btn-lg'><i class='fas fa-check'></i></a><br><br><h3>NEW TREATMENT SUCCESSFULLY ADDED</h3><button class='btn btn-primary' onclick='reloadPage();'>ADD NEW RECORD</button></div></div>";
+            } else {
                 document.getElementById("formResult").innerHTML = result;
             }
         }
     });
 }
-function reloadPage(){
-location.reload();
+function reloadPage() {
+    location.reload();
 }

@@ -80,6 +80,8 @@ function saveRegion() {
                 body: formData
             }).then(res => res.json())
                 .then(data => {
+
+                    logThis("Dental Chart - Update", formData, data.status);
                     if (data.status === "success") {
 
                         getclientdentalChart();

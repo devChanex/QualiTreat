@@ -13,7 +13,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -61,16 +61,15 @@ error_reporting(0);
                             <input type="hidden" value="<?php echo $_GET['clientId']; ?>" id="clientId">
 
                             <div style="display: flex; align-items: center; margin-left: 50px;">
-                                <img src="img/white_logo_final.jpg" alt="Logo"
+                                <img src="img/ <?php echo $headerlogo; ?>" alt="Logo"
                                     style="max-height: 100px; margin-right: 20px;">
                                 <div>
-                                    <h4 style="margin-bottom: 5px; font-weight: bold;">Dr. Nikki Sarmiento Dental Care
-                                        Clinic</h4>
+                                    <h4 style="margin-bottom: 5px; font-weight: bold;"> <?php echo $formheadername; ?>
+                                    </h4>
                                     <p style="margin: 0;">
-                                        Stall B Josefa St. Josefaville 1 Subd Brgy Malabanias<br>
-                                        Angeles City Pampanga PH 2009
+                                        <?php echo $formheaderaddress; ?>
                                         <br>
-                                        0927-605-8418 / 0960-437-5938
+                                        <?php echo $businessContact; ?>
                                     </p>
                                 </div>
                             </div>

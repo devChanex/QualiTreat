@@ -28,7 +28,7 @@ class ServiceClass
     //DO NOT INCLUDE THIS CODE
     public function process($search, $page, $itemPerPage)
     {
-        $superuser = "nikesarmiento";
+
 
         $offset = ($page - 1) * $itemPerPage;  // Calculate the offset for pagination
 
@@ -131,7 +131,7 @@ class ServiceClass
 
                 // }
 
-                if ($_SESSION["username"] == $superuser) {
+                if ($_SESSION["account_type"] == 0 || $_SESSION["account_type"] == 100) {
                     echo '
                
                     <a href="#" class="btn btn-danger btn-circle" onclick="deleteClient(\'' . $row["clientid"] . '\')" title="Delete Client Profile"><i class="fas fa-trash"></i></a>

@@ -13,7 +13,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -85,29 +85,27 @@ error_reporting(0);
                             <div class="modal fade" id="editTreatmentModal" tabindex="-1" role="dialog">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
-                                        <form>
-                                            <div class="card-header py-3 <?php echo $cards; ?>">
-                                                <h5 class="modal-title">Medicine</h5>
-                                                <button type="button" class="close"
-                                                    data-dismiss="modal">&times;</button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <input type="hidden" id="editTreatmentId">
-                                                Generic Name:
-                                                <input type="text" class="form-control mb-2" id="editGenericName">
-                                                Dispense:
-                                                <input type="text" class="form-control mb-2" id="editDispense">
-                                                Signetur:
-                                                <textarea class="form-control mb-2" id="editSignetur"
-                                                    rows="3"></textarea>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="buttton" class="btn btn-primary"
-                                                    onclick="SaveMedicine();">Save</button>
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Cancel</button>
-                                            </div>
-                                        </form>
+
+                                        <div class="card-header py-3 <?php echo $cards; ?>">
+                                            <h5 class="modal-title">Medicine</h5>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <input type="hidden" id="editTreatmentId">
+                                            Generic Name:
+                                            <input type="text" class="form-control mb-2" id="editGenericName">
+                                            Dispense:
+                                            <input type="text" class="form-control mb-2" id="editDispense">
+                                            Signetur:
+                                            <textarea class="form-control mb-2" id="editSignetur" rows="3"></textarea>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="buttton" class="btn btn-primary"
+                                                onclick="SaveMedicine();">Save</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Cancel</button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -145,8 +143,10 @@ error_reporting(0);
             <script src="js/sb-admin-2.min.js"></script>
             <script src="controllers/logOutConroller.js"></script>
             <script src="controllers/sessionController.js"></script>
-            <script src="controllers/getmedicineListController.js"></script>
             <script src="js/custom-v2.js"></script>
+            <script src="controllers/activityLogsController.js"></script>
+            <script src="controllers/getmedicineListController.js"></script>
+
 
 
 

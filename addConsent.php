@@ -14,7 +14,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Smiles & More</title>
+    <title>QualiTreat Dental Clinic</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -57,14 +57,12 @@ error_reporting(0);
                             <input type="hidden" value="<?php echo $_GET['clientid']; ?>" id="clientId">
                             <div class="row">
                                 <div class="col-lg-12 d-flex align-items-center">
-                                    <img src="img/white_logo_final.jpg" alt="Logo"
+                                    <img src="img/<?php echo $headerlogo; ?>" alt="Logo"
                                         style="max-height:100px; margin-right: 20px;">
                                     <div>
-                                        <h4 class="mb-1"><strong>Dr. Nikki Sarmiento Dental Care Clinic</strong>
+                                        <h4 class="mb-1"><strong><?php echo $formheadername; ?></strong>
                                         </h4>
-                                        <p class="mb-0">Stall B Josefa St. Josefaville 1 Subd Brgy Malabanias
-                                            Angeles
-                                            City Pampanga PH 2009</p>
+                                        <p class="mb-0"><?php echo $formheaderaddress; ?></p>
                                     </div>
                                 </div>
                             </div>

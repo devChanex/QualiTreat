@@ -19,7 +19,7 @@ echo '
 
 ';
 
-echo $systemname;
+echo '<img src="img/' . $headerlogo . '" alt="Company Logo" style="width: 150px; margin-right: 10px;">';
 echo '</strong>
 
                     <!-- Topbar Navbar -->

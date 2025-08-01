@@ -27,7 +27,7 @@ class ServiceClass
     {
         try {
 
-
+            include_once('../bars/properties.php');
 
             $query = "select a.*,(select concat(lname,', ',fname,' ',mdname) from clientprofile where clientid=a.clientid) as clientname from treatmentsoa a where a.soaid=:a";
             $stmt = $this->conn->prepare($query);
@@ -38,8 +38,8 @@ class ServiceClass
                     echo '
            <div class="row align-items-center">
             <div class="col-lg-6 d-flex align-items-center" style="text-align:left;">
-                    <img src="img/white_logo_final.jpg" alt="Company Logo" style="height: 40px; margin-right: 10px;">
-                    <strong>Smiles & More</strong>
+                    <img src="img/' . $headerlogo . '" alt="Company Logo" style="width: 250px; margin-right: 10px;">
+                   
                 </div>
                 <div class="col-lg-6" style="text-align:right;">
                     Bringing you, your best smile!
@@ -47,10 +47,10 @@ class ServiceClass
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    Stall B Josefa St. Josefaville 1 Subd Brgy Malabanias Angeles City Pampanga PH 2009
+                    ' . $formheaderaddress . '
                 </div>
                 <div class="col-lg-12">
-                    0927-605-8418 / 0960-437-5938
+                    ' . $businessContact . '
                 </div>
             </div>
 
@@ -293,7 +293,7 @@ class ServiceClass
                                     <label>Patient’s/Guardian’s Signature</label>
                                     <div class="border rounded p-3 signature-box"
                                         style="height: 80px; cursor: pointer;" 
-                                        id="patient-signature-box">
+                                        id="patient-signature-box" onclick="signature()">
                                     <img src="' . $img . '" alt="Patient signature" style="width: 100%; height: 100%; object-fit: contain;">
 
                                                 
@@ -315,8 +315,8 @@ class ServiceClass
                                 <div class="col-sm-6">
                                     <label>Patient’s/Guardian’s Signature</label>
                                     <div class="border rounded p-3 signature-box"
-                                        style="height: 80px; cursor: pointer;" 
-                                        id="patient-signature-box">
+                                        style="height: 80px; cursor: pointer;"  onclick="signature()"
+                                        id="patient-signature-box"  >
                                    
                                                 
                                         

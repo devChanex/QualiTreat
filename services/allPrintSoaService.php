@@ -28,7 +28,7 @@ class ServiceClass
         try {
 
 
-
+            include_once('bars/properties.php');
             $query = "select a.*,(select concat(lname,', ',fname,' ',mdname) from clientprofile where clientid=a.clientid) as clientname from treatmentsoa a where a.soaid=:a";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':a', $soaid);
@@ -37,13 +37,12 @@ class ServiceClass
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     echo '
                 <div class="row">
-                <div class="col-lg-6"><strong>KBF Dental Care Clinic</strong></div>
+                <div class="col-lg-6"><strong>' . $formheadername . '</strong></div>
                 <div class="col-lg-6" style="text-align:right;">Bringing you, your best smile!</div>
             </div>
             <div class="row">
-                <div class="col-lg-12">Stall B Josefa St. Josefaville 1 Subd Brgy Malabanias
-                                        Angeles City Pampanga PH 2009</div>
-                <div class="col-lg-12">0927-605-8418 / 0960-437-5938</div>
+                <div class="col-lg-12">' . $formheaderaddress . '</div>
+                <div class="col-lg-12">' . $businessContact . '</div>
                 <hr>
                 <div class="col-lg-12" style="text-align:center;"><strong>Electronic Statement of Account - ESOA</strong></div>
             </div>

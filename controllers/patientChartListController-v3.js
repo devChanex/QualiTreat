@@ -92,7 +92,7 @@ function deleteTreatment(soaid, tsubid) {
             contentType: false,
             type: 'POST',
             success: function (result) {
-
+                logThis("Patient Chart - Delete Treatment", fd, result);
                 getclientdata(); // Refresh the data table after update
                 getPatientCards(); // Refresh the patient cards after update    
                 // Optionally refresh data or show a success toast
@@ -134,6 +134,7 @@ function updateTreatment() {
         contentType: false,
         type: 'POST',
         success: function (result) {
+            logThis("Patient Chart - Update Treatment", fd, result);
             // Assuming the modal ID is #editModal
             $('#editModal').modal('hide');
             getclientdata(); // Refresh the data table after update
@@ -142,6 +143,7 @@ function updateTreatment() {
             toastReload('successToast', 'Treatment updated successfully!');
         },
         error: function () {
+            logThis("Patient Chart - Update Treatment", fd, 'Failed to update treatment.');
             toastError('Failed to update treatment.');
         }
 
