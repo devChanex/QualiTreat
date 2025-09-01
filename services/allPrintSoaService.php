@@ -38,7 +38,7 @@ class ServiceClass
                     echo '
                 <div class="row">
                 <div class="col-lg-6"><strong>' . $formheadername . '</strong></div>
-                <div class="col-lg-6" style="text-align:right;">Bringing you, your best smile!</div>
+                <div class="col-lg-6" style="text-align:right;">You deserve quality treatment for your teeth!</div>
             </div>
             <div class="row">
                 <div class="col-lg-12">' . $formheaderaddress . '</div>

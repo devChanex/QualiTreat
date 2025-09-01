@@ -42,7 +42,7 @@ class ServiceClass
                    
                 </div>
                 <div class="col-lg-6" style="text-align:right;">
-                    Bringing you, your best smile!
+                    You deserve quality treatment for your teeth!
                 </div>
             </div>
             <div class="row">

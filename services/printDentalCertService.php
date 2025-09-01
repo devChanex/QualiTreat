@@ -40,8 +40,8 @@ class ServiceClass
 
     <!-- Centered Logo and Clinic Name -->
     <div style="text-align: center; margin-bottom: 0.5em;">
-        <img src="img/' . $headerlogo . '" alt="Company Logo" style="height: 40px; display: inline-block; vertical-align: middle; margin-bottom: 0.3em;">
-        <div style="font-size: 20pt; font-weight: bold;">' . $formheadername . '</div>
+        <img src="img/' . $headerlogo2 . '" alt="Company Logo" style="height: 150px; display: inline-block; vertical-align: middle; margin-bottom: 0.4em;">
+        
     </div>
 
     <!-- Centered Address and Contact Info -->
@@ -76,9 +76,10 @@ class ServiceClass
 
     <!-- Footer Just Below Last Paragraph -->
     <div style="text-align: right; margin-top: 2em;">
-        <p style="margin: 0;">' . $row["dentist"] . '</p>
+           <img src="img/' . $dentistSignature . '" alt="Company Logo" style="height: 40px; display: inline-block; vertical-align: middle; margin-bottom: 0.3em;">
+        <p style="margin: 0;">' . $dentist . '</p>
         <p style="margin: 0;">Attending Dentist</p>
-        <p style="margin: 0;">License No. ' . $row["license"] . '</p>
+        <p style="margin: 0;">License No. ' . $licensenum . '</p>
     </div>
 
 </div>

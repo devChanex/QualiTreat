@@ -131,7 +131,7 @@ error_reporting(0);
 
                                     <p style="text-align: center; color: black; margin: 0;font-size:13px;">
 
-                                        <strong>Contact Number:</strong> <?php echo $businessContact; ?>
+                                         <?php echo $businessContact; ?>
                                     </p>
 
 
@@ -179,8 +179,8 @@ error_reporting(0);
                                             style="border-bottom: 1px solid black; width: 200px; margin-left: auto; margin-bottom: 5px;">
                                         </div>
 
-                                        <strong id="print-dentist">Nikki Ferrer Sarmiento, DDM</strong><br>
-                                        License No.: <span id="print-license">0053036</span><br>
+                                        <strong id="print-dentist">Dr. Ann Jeth D. Timbol</strong><br>
+                                        License No.: <span id="print-license">51755</span><br>
                                         PTR No.: _______________
                                     </div>
 
@@ -219,12 +219,12 @@ error_reporting(0);
                                             <div class="form-group col-md-6">
                                                 <label>Dentist Name: </label>
                                                 <input type="text" class="form-control" name="dentistname"
-                                                    id="modal-dentist">
+                                                    id="modal-dentist" placeholder="Dr. Ann Jeth D. Timbol" disabled>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>License No.: </label>
                                                 <input type="text" class="form-control" name="dentistname"
-                                                    id="modal-license">
+                                                    id="modal-license" placeholder="51755" disabled>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Patient Name</label>
