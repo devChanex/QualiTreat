@@ -6,18 +6,18 @@ date_default_timezone_set("Asia/Manila");
 class Database
 {
     // local
-    private $host = "localhost";
-    private $db_name = "qualitreat_db";
-    private $username = "root";
-    private $password = '';
+    // private $host = "localhost";
+    // private $db_name = "qualitreat_db";
+    // private $username = "root";
+    // private $password = '';
 
 
     //prod
 
-    // private $host = "216.218.206.42";
-    // private $db_name = "qualitre_sysdb";
-    // private $username = "qualitre_admin";
-    // private $password = 'wD?j{)4yY+UML&b#';
+    private $host = "216.218.206.42";
+    private $db_name = "qualitre_sysdb";
+    private $username = "qualitre_admin";
+    private $password = 'wD?j{)4yY+UML&b#';
 
 
 

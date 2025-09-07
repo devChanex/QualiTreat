@@ -102,8 +102,8 @@ function submitCart() {
     const age = document.getElementById("modal-age").value;
     const gender = document.getElementById("modal-gender").value;
     const address = document.getElementById("modal-address").value;
-    const dentist = document.getElementById("modal-dentist").value;
-    const license = document.getElementById("modal-license").value;
+    const dentist = document.getElementById("#modal-dentist").value;
+    const license = document.getElementById("#modal-license").value;
     const treatment = document.getElementById("modal-treatment").value;
     const diagnosis = document.getElementById("modal-diagnosis").value;
 

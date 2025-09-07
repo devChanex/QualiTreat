@@ -142,18 +142,18 @@ $('#editExpenseModal').on('show.bs.modal', function (event) {
 $('#printPrescriptionModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget); // Button that triggered the modal
 
-    // Set values in the modal
-    $('#print-date').text(button.data('date'));
-    $('#print-name').text(button.data('name'));
-    $('#print-age').text(button.data('age') + "/" + button.data('gender'));
-
-    $('#print-address').text(button.data('address'));
-    document.getElementById("print-dentist").innerHTML = button.data('dentist');
-    document.getElementById("print-license").innerHTML = button.data('license');
+    // Fill all matching elements (both left & right copies)
+    $('.print-date').text(button.data('date'));
+    $('.print-name').text(button.data('name'));
+    $('.print-age').text(button.data('age'));
+    $('.print-gender').text(button.data('gender'));
+    $('.print-address').text(button.data('address'));
+    $('.print-dentist').text(button.data('dentist'));
+    $('.print-license').text(button.data('license'));
 
     var rxid = button.data('rxid');
 
-    // Load medicines dynamically via AJAX (optional but recommended)
+    // Load medicines dynamically via AJAX and inject into both copies
     var fd = new FormData();
     fd.append("rxid", rxid);
 
@@ -164,13 +164,11 @@ $('#printPrescriptionModal').on('show.bs.modal', function (event) {
         contentType: false,
         type: 'POST',
         success: function (result) {
-
-            document.getElementById("presmedicine").innerHTML = result;
-
+            $(".presmedicine").html(result); // update all prescription lists
         }
-
     });
 });
+
 
 
 function getclientdataPagination() {
@@ -209,8 +207,8 @@ function submitCart() {
     const age = document.getElementById("modal-age").value;
     const gender = document.getElementById("modal-gender").value;
     const address = document.getElementById("modal-address").value;
-    const dentist = document.getElementById("modal-dentist").value;
-    const license = document.getElementById("modal-license").value;
+    const dentist = document.getElementById("#modal-dentist").value;
+    const license = document.getElementById("#modal-license").value;
 
     // Get list of rxid from the table (first column in each row)
     const tableRows = document.querySelectorAll("#prescriptionsubList tr");
@@ -320,57 +318,36 @@ function printPrescription() {
     const footer = printContents.querySelector('.modal-footer');
     if (footer) footer.remove();
 
-    const printWindow = window.open("", "", "width=800,height=600");
+    const printWindow = window.open("", "", "width=1100,height=800");
     printWindow.document.write(`
     <html>
         <head>
             <title>Prescription</title>
             <style>
                 body {
-                    font - family: serif;
-                font-size: 11pt;
-                width: 4.25in;
-                height: 5.5in;
-                padding: 0.5in;
-                margin: 0;
-                box-sizing: border-box;
-                color: black;
+                    font-family: serif;
+                    font-size: 11pt;
+                    margin: 0;
+                    padding: 0.5in;
+                    color: black;
                 }
-
+                .print-container {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 20px;
+                }
+                .print-container > div {
+                    width: 48%;
+                    box-sizing: border-box;
+                }
                 h1, h2, h5, p {
                     margin: 0;
-                padding: 0;
+                    padding: 0;
                 }
-
-                .row {
-                    display: flex;
-                flex-wrap: wrap;
-                margin-bottom: 10px;
-                }
-
-                .col-sm-6 {
-                    flex: 0 0 50%;
-                max-width: 50%;
-                }
-
-                .col-sm-12 {
-                    flex: 0 0 100%;
-                max-width: 100%;
-                }
-
-                #doctor-info {
-                    position: absolute;
-                bottom: 1.2cm;
-                right: 1.5cm;
-                text-align: right;
-                font-size: 11pt;
-                font-family: arial;
-                }
-
                 hr {
                     border: 0;
-                border-top: 1px solid black;
-                margin: 10px 0;
+                    border-top: 1px solid black;
+                    margin: 10px 0;
                 }
             </style>
         </head>
@@ -385,5 +362,3 @@ function printPrescription() {
     printWindow.print();
     printWindow.close();
 }
-
-

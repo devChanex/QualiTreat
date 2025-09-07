@@ -119,71 +119,17 @@ error_reporting(0);
                                 <div class="modal-body">
 
 
-                                    <div style="text-align:center;margin:0px;">
-                                        <img src="img/<?php echo $headerlogo; ?>"
-                                            style="max-width:250px; align-items:center" />
-                                    </div>
+                                   <div class="print-container">
+          <!-- Left copy -->
+          <div class="print-copy">
+            <?php include 'prescription-template.php'; ?>
+          </div>
 
-                                    <p style="text-align: center; color: black; margin: 0;font-size:13px;">
-                                        <?php echo $formheaderaddress; ?>
-
-                                    </p>
-
-                                    <p style="text-align: center; color: black; margin: 0;font-size:13px;">
-
-                                         <?php echo $businessContact; ?>
-                                    </p>
-
-
-
-
-                                    <hr style="border: 1px solid black; margin: 10px 0;">
-
-                                    <!-- Patient Info Row -->
-                                    <div
-                                        style="display: flex; justify-content: space-between; color: black; margin-bottom: 1px;">
-                                        <div style="width: 100%;"><strong>Name:</strong> <span id="print-name"></span>
-                                        </div>
-
-                                    </div>
-                                    <div
-                                        style="display: flex; justify-content: space-between; color: black; margin-bottom: 1px;">
-
-                                        <div style="width: 100%; text-align: left;">
-                                            <strong>Age/Gender:</strong> <span id="print-age"></span> <span
-                                                id="print-gender"></span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Address -->
-                                    <div style="color: black; margin-bottom: 1px;">
-                                        <strong>Address:</strong> <span id="print-address"></span>
-                                    </div>
-
-                                    <!-- Rx and Date Row -->
-                                    <div
-                                        style="display: flex; justify-content: space-between; align-items: flex-start; color: black; margin-bottom: 10px;">
-                                        <div style="font-family: serif; font-weight: bold; font-size: 28px;">Rx</div>
-                                        <div style="text-align: right;"><strong>Date:</strong> <span
-                                                id="print-date"></span></div>
-                                    </div>
-
-                                    <!-- Prescription Medicine Section -->
-                                    <div id="presmedicine" style="color: black; margin-bottom: 30px;">
-                                        <!-- Medicine list will be injected here -->
-                                    </div>
-
-                                    <!-- Doctor Info at the bottom right -->
-                                    <div style="text-align: right; color: black; font-size: 11pt; font-family: Arial;">
-                                        <div
-                                            style="border-bottom: 1px solid black; width: 200px; margin-left: auto; margin-bottom: 5px;">
-                                        </div>
-
-                                        <strong id="print-dentist">Dr. Ann Jeth D. Timbol</strong><br>
-                                        License No.: <span id="print-license">51755</span><br>
-                                        PTR No.: _______________
-                                    </div>
-
+          <!-- Right copy -->
+          <div class="print-copy">
+            <?php include 'prescription-template.php'; ?>
+          </div>
+        </div>
 
 
 
@@ -219,12 +165,12 @@ error_reporting(0);
                                             <div class="form-group col-md-6">
                                                 <label>Dentist Name: </label>
                                                 <input type="text" class="form-control" name="dentistname"
-                                                    id="modal-dentist" placeholder="Dr. Ann Jeth D. Timbol" disabled>
+                                                    id="#modal-dentist" placeholder="Dr. Ann Jeth D. Timbol" value="Dr. Ann Jeth D. Timbol" readonly>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>License No.: </label>
-                                                <input type="text" class="form-control" name="dentistname"
-                                                    id="modal-license" placeholder="51755" disabled>
+                                                <input type="text" class="form-control" name="license"
+                                                    id="#modal-license" placeholder="51755" value="51755" readonly>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Patient Name</label>

@@ -56,8 +56,14 @@ error_reporting(0);
 
 
                                     <button id="divPrinter" class="btn btn-secondary btn-sm btn-circle float-right"
-                                        onclick="printDiv('bodyResult')" title="Print Certificate"><i
-                                            class="fas fa-print"></i></button>
+                                        onclick="printDiv('bodyResult')" title="Print Certificate">
+                                    
+                                        <i class="fas fa-print"></i></button>
+
+                                        <a href="dentalcertList.php"><button class="btn btn-secondary btn-sm btn-circle float-right"
+                                         title="Back to List">
+                                    
+                                        <i class="fas fa-times-circle"></i></button></a>
 
 
 

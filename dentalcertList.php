@@ -187,7 +187,7 @@ error_reporting(0);
                                     </div>
 
 
-                                    -->
+        
 
                                 </div>
                                 <div class="modal-footer d-print-none">
@@ -221,12 +221,12 @@ error_reporting(0);
                                             <div class="form-group col-md-6">
                                                 <label>Dentist Name: </label>
                                                 <input type="text" class="form-control" name="dentistname"
-                                                    id="modal-dentist">
+                                                    id="#modal-dentist" value="Dr. Ann Jeth D. Timbol" readonly>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>License No.: </label>
                                                 <input type="text" class="form-control" name="dentistname"
-                                                    id="modal-license">
+                                                    id="#modal-license" value="51755" readonly>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Patient Name</label>

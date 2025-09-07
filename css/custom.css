@@ -146,3 +146,34 @@
     max-width: 95% !important;
     /* or any %/px you prefer */
 }
+
+/* for printing prescription */
+.print-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* space between the two copies */
+}
+
+.print-copy {
+  width: 48%; /* make them equal width */
+  border: 1px solid #000; /* optional: outline */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Ensure correct layout when printing */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-area, #printable-area * {
+    visibility: visible;
+  }
+  #printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+</style>
