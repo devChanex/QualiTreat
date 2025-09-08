@@ -11,7 +11,7 @@ $brandLogo = "logo_transparent_square2.png";
 $sidebarColor = "bg-purple";
 $superuser = "nikesarmiento";
 $businessContact = "📞09458734468";
-$dentist = "Dr. Ann Jeth D. Timbol";
+$dentist = ["Dr. Ann Jeth D. Timbol"];
 $licensenum = "51755";
 $dentistSignature = "e-signature.png";
     ?>
