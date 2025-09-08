@@ -133,6 +133,9 @@ include_once("bars/properties.php");
                                                 <label for="height">Height</label>
                                                 <input type="text" name="height" id="height" placeholder="Height"
                                                     class="form-control mb-2">
+                                                  <label for="weight">Weight</label>
+                                                <input type="text" name="weight" id="weight" placeholder="Weight"
+                                                    class="form-control mb-2">
                                             </div>
 
                                             <!-- Demographics -->
@@ -161,27 +164,37 @@ include_once("bars/properties.php");
                                                 <label for="emailAddress">Email Address</label>
                                                 <input type="text" name="emailAddress" id="emailAddress"
                                                     placeholder="Email Address" class="form-control mb-2">
-
-                                                <label for="weight">Weight</label>
-                                                <input type="text" name="weight" id="weight" placeholder="Weight"
-                                                    class="form-control mb-2">
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <!-- Birth Info -->
-                                            <div class="col-lg-4 mb-4">
-                                                <label for="birthday">Birthday</label>
+                                                
+                                                    <label for="birthday">Birthday</label>
                                                 <input type="date" name="birthday" id="birthday"
                                                     class="form-control mb-2" onchange="computeAge()">
 
                                                 <label for="age">Age</label>
                                                 <input type="number" name="age" id="age" placeholder="Age"
                                                     class="form-control mb-2" readonly>
+                                              
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <!-- Birth Info -->
+                                            <div class="col-lg-4 mb-4">
+                                                <!-- <label for="birthday">Birthday</label>
+                                                <input type="date" name="birthday" id="birthday"
+                                                    class="form-control mb-2" onchange="computeAge()">
+
+                                                <label for="age">Age</label>
+                                                <input type="number" name="age" id="age" placeholder="Age"
+                                                    class="form-control mb-2" readonly> -->
 
                                                 <label for="occupation">Occupation</label>
                                                 <input type="text" name="occupation" id="occupation"
                                                     placeholder="Occupation" class="form-control mb-2">
+
+                                                    <label for="contactNumber">Contact Number</label>
+                                                <input type="text" name="contactNumber" id="contactNumber"
+                                                    placeholder="Contact Number" class="form-control mb-2">
+
                                             </div>
 
                                             <!-- Contact Info -->
@@ -189,10 +202,10 @@ include_once("bars/properties.php");
                                                 <label for="homeAddress">Home Address</label>
                                                 <input type="text" name="homeAddress" id="homeAddress"
                                                     placeholder="Home Address" class="form-control mb-2">
-
+<!-- 
                                                 <label for="contactNumber">Contact Number</label>
                                                 <input type="text" name="contactNumber" id="contactNumber"
-                                                    placeholder="Contact Number" class="form-control mb-2">
+                                                    placeholder="Contact Number" class="form-control mb-2"> -->
 
                                                 <label for="referredBy">Referred By</label>
                                                 <input type="text" name="referredBy" id="referredBy"
