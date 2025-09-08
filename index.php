@@ -53,8 +53,8 @@ include_once("bars/properties.php");
                             <img src="img/<?php echo $headerlogo; ?>" alt="Logo"
                                 style="max-height:100px; margin-right: 20px;">
                             <div>
-                                <h4 class="mb-1"><strong><?php echo $formheadername; ?></strong></h4>
                                 <p class="mb-0"><?php echo $formheaderaddress; ?></p>
+                                <p class="mb-0"><?php echo $contactnum; ?></p>
                             </div>
                         </div>
 
