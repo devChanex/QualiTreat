@@ -59,11 +59,13 @@ error_reporting(0);
                         <div class="card-body" id="bodyResult">
 
                             <div class="row">
-                                <div class="col-lg-6"><?php echo $formheadername; ?></strong></div>
+                                <div class="col-lg-6"> <?php echo $formheaderaddress;  ?><br> <?php echo $businessContact;?></div>
+                              
                                 <div class="col-lg-6" style="text-align:right;">You deserve quality treatment for your teeth!</div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-12"> <?php echo $formheaderaddress; ?></div>
+                                
+                                
 
                                 <hr>
                                 <div class="col-lg-12" style="text-align:center;"><strong>Electronic Statement of
