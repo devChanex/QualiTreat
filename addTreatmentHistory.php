@@ -12,6 +12,7 @@ error_reporting(0);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta charset="UTF-8">
 
     <title>QualiTreat Dental Clinic</title>
 
@@ -98,8 +99,10 @@ error_reporting(0);
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label for="Client Name">Client Name</label>
-                                    <input type="Text" name="lastName" id="lastName" placeholder="LAST NAME"
-                                        class="form-control" value="<?php echo $_GET['clientname']; ?>" readonly>
+                                    <input type="text" name="lastName" id="lastName" placeholder="LAST NAME"
+                                        class="form-control" 
+                                        value="<?php echo htmlspecialchars($_GET['clientname'], ENT_QUOTES, 'UTF-8'); ?>" 
+                                        readonly>
                                     <label for="Birthday">Birthday</label>
                                     <input type="Text" name="lastName" id="lastName" placeholder="BIRTHDAY"
                                         class="form-control" value="<?php echo $_GET['birthDate']; ?>" readonly>
@@ -115,9 +118,10 @@ error_reporting(0);
                                     <label for="Address">Address</label>
                                     <input type="Text" name="address" id="address" placeholder="Address"
                                         class="form-control" value="<?php echo $_GET['address']; ?>" readonly>
+                                    
+                                    <!-- HMO temporary disabled as per Doc Anj -->
                                     <label for="Address">HMO Accredited:</label>
-
-                                    <select id="hmo" name="hmo" class="form-control mb-2">
+                                    <select id="hmo" name="hmo" class="form-control mb-2" disabled>
                                         <option value="">-- Select HMO --</option>
                                         <?php
                                         $hmos = ['Flexicare', 'Intellicare', 'Avega', 'Eastwest', 'ValuCare', 'Medicard', 'Health Partners Dental Access, Inc.', 'Dental Network Company', 'Cocolife'];
@@ -160,8 +164,10 @@ error_reporting(0);
                                     <input type="number" name="price" id="price" placeholder="Input fee"
                                         class="form-control" value="">
                                     <div class="form-check mt-2">
+                                        <!-- HMO temporary disabled as per Doc Anj -->
                                         <input class="form-check-input" type="checkbox" value="1" id="hmoCovered"
-                                            name="hmoCovered">
+                                            name="hmoCovered" disabled>
+
                                         <label class="form-check-label" for="hmoCovered">
                                             Covered by HMO
                                         </label>

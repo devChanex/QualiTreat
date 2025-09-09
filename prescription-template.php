@@ -60,7 +60,7 @@
 
                                         <strong id="print-dentist" class="print-dentist">Dr. Ann Jeth D. Timbol</strong><br>
                                         License No.: <span id="print-license" class="print-license">51755</span><br>
-                                        PTR No.: 
+                                        PTR No.: <?php echo $ptr ;?>
                                     </div>
 
 
