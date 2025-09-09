@@ -224,7 +224,7 @@ include_once("bars/properties.php");
                                             </div>
                                         </div>
 
-
+                                        <!-- HMO temporary disabled as per Doc Anj -->
                                         <hr>
                                         <h5 class="mb-3">Health Maintenance Organization</h5>
                                         <div class="row">
@@ -232,7 +232,7 @@ include_once("bars/properties.php");
                                             <!-- Demographics -->
                                             <div class="col-lg-4 mb-4">
                                                 <label for="HMO">HMO</label>
-                                                <select id="hmo" name="hmo" class="form-control mb-2">
+                                                <select id="hmo" name="hmo" class="form-control mb-2" disabled>
                                                     <option value="">-- Select HMO --</option>
                                                     <option value="Cocolife">Cocolife</option>
                                                     <option value="Medicard">Medicard</option>
@@ -244,13 +244,13 @@ include_once("bars/properties.php");
                                             <div class="col-lg-4 mb-4">
                                                 <label for="cardNumber">Account No.</label>
                                                 <input type="text" name="cardNumber" id="cardNumber"
-                                                    placeholder="Health Card Number" class="form-control mb-2">
+                                                    placeholder="Health Card Number" class="form-control mb-2" disabled>
 
                                             </div>
                                             <div class="col-lg-4 mb-4">
                                                 <label for="cardNumber">Company</label>
                                                 <input type="text" name="company" id="company"
-                                                    placeholder="Company Name" class="form-control mb-2">
+                                                    placeholder="Company Name" class="form-control mb-2" disabled>
 
                                             </div>
                                         </div>
