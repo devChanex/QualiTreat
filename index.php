@@ -1084,27 +1084,26 @@ include_once("bars/properties.php");
                                     </div>
                                     <div class="form-group col-md-6">
 
-                                        <label for="dentist">Dentist's Name</label>
+                                       <label for="dentist">Dentist's Name</label>
 
 
                                         <input list="dentists" name="dentist" id="dentistName" class="form-control"
-                                            onchange="setDentistSignature();">
+                                            onchange="setDentistSignature();" value="Dr. Ann Jeth D. Timbol" readonly>
                                         <datalist id="dentists">
                                             <?php
                                             include_once("bars/properties.php");
                                             foreach ($dentist as $d) {
-                                                echo '<option value="' . htmlspecialchars(string: $d) . '">';
+                                                echo '<option value="' . htmlspecialchars($d) . '">';
                                             }
                                             ?>
                                         </datalist>
                                         <label>Dentist Signature</label>
                                         <div class="border rounded p-3 signature-box text-center"
-                                            style="height: 80px; cursor: pointer;" id="dentist-signature-box" onclick="openSignatureModal(function(sigData) {
-                 setSignature('dentist', sigData);
-             })">
+                                            style="height: 80px; cursor: pointer;" id="dentist-signature-box" >
 
                                         </div>
-                                        <input type="hidden" name="dentist_signature" id="dentist-signature-input">
+                                        <input type="hidden" name="dentist_signature" id="dentist-signature-input" value="img/' . $dentistSignature . '" alt="Company Logo" style="height: 40px; display: inline-block; vertical-align: middle; margin-bottom: 0.3em;">
+                                        
                                     </div>
 
                                 </div>
@@ -1176,13 +1175,14 @@ include_once("bars/properties.php");
             <script src="js/camera.js"></script>
             <script src="js/custom-v1.js"></script>
             <script src="js/signature.js"></script>
-
-            <script>
+             <script>
                 const dentistSignatures = <?php echo json_encode(array_combine($dentist, $dentistSignature)); ?>;
             </script>
-
-            <script src="controllers/activityLogsController.js"></script>
+             <script src="controllers/activityLogsController.js"></script>
             <script src="controllers/clientRegistrationController-v7.js"></script>
+           
+
+     
 
 
 

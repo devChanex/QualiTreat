@@ -8,11 +8,8 @@ $headerlogo = "logo_transparent.png";
 $footerlogo = "logo_transparent.png";
 $sidebarColor = "bg-gradient-success";
 $superuser = "sysadmin";
-$dentist = [
-    "Dr. Ann Jeth D. Timbol"
-];
+$dentist = ["Dr. Ann Jeth D. Timbol"];
 
-$dentistSignature = [
-    ""
-]
+$dentistSignature = ["e-signature.png"];
+
     ?>

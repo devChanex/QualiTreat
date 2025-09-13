@@ -180,7 +180,7 @@ include_once("bars/properties.php");
 
 
                                         <input list="dentists" name="dentist" id="dentistName" class="form-control"
-                                            onchange="setDentistSignature();">
+                                            onchange="setDentistSignature();" value="Dr. Ann Jeth D. Timbol" readonly>
                                         <datalist id="dentists">
                                             <?php
                                             include_once("bars/properties.php");
@@ -191,12 +191,11 @@ include_once("bars/properties.php");
                                         </datalist>
                                         <label>Dentist Signature</label>
                                         <div class="border rounded p-3 signature-box text-center"
-                                            style="height: 80px; cursor: pointer;" id="dentist-signature-box" onclick="openSignatureModal(function(sigData) {
-                 setSignature('dentist', sigData);
-             })">
+                                            style="height: 80px; cursor: pointer;" id="dentist-signature-box" >
 
                                         </div>
-                                        <input type="hidden" name="dentist_signature" id="dentist-signature-input">
+                                        <input type="hidden" name="dentist_signature" id="dentist-signature-input" value="img/' . $dentistSignature . '" alt="Company Logo" style="height: 40px; display: inline-block; vertical-align: middle; margin-bottom: 0.3em;">
+                                        
                                     </div>
 
                                 </div>

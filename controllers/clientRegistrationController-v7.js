@@ -236,7 +236,7 @@ function toggleSpecifyInput(checkbox, inputId) {
     }
 }
 
-function computeAge() {
+function computeAge(){
 
     var birthday = document.getElementById("birthday").value;
     var dob = new Date(birthday);
