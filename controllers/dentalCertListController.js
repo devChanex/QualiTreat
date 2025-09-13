@@ -1,4 +1,5 @@
 getclientdata();
+populateProfileList();
 function getclientdata() {
 
     var search = document.getElementById("tableSearch").value;
@@ -90,6 +91,56 @@ function getclientdataPagination() {
 
     });
     document.getElementById("content-table").style.zoom = "60%";
+}
+
+//get profile from database
+function populateProfileList() {
+
+
+    var fd = new FormData();
+    $.ajax({
+        url: "services/ProfileListOptionService.php",
+        data: fd,
+        processData: false,
+        contentType: false,
+        type: 'POST',
+        success: function (result) {
+
+            document.getElementById("modal-name").innerHTML = result;
+        }
+
+    });
+    document.getElementById("content-table").style.zoom = "60%";
+}
+//get profile details from database after mag select
+function getProfileDetails(fullname) {
+    if (fullname === "") {
+        document.getElementById("modal-age").value = "";
+        document.getElementById("modal-gender").value = "";
+        document.getElementById("modal-address").value = "";
+        return;
+    }
+
+    var fd = new FormData();
+    fd.append("fullname", fullname);
+
+    $.ajax({
+        url: "services/GetProfileDetailsService.php",
+        data: fd,
+        processData: false,
+        contentType: false,
+        type: 'POST',
+        success: function (result) {
+            try {
+                var data = JSON.parse(result);
+                document.getElementById("modal-age").value = data.age;
+                document.getElementById("modal-gender").value = data.gender;
+                document.getElementById("modal-address").value = data.address;
+            } catch (e) {
+                console.error("Invalid JSON:", result);
+            }
+        }
+    });
 }
 
 
