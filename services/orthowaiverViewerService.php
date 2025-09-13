@@ -67,13 +67,13 @@ class ServiceClass
 
                 $imageData = base64_encode($row['dentistSignature']);
                 $imageType = "png"; // Or "png" depending on what your DB stores
-                $dentistSignature = 'img/e-sign.png';
+                $dentistSignature = 'img/e-signature.png';
 
 
                 if ($row['dentistSignature'] != null || $row['dentistSignature'] != '') {
 
 
-                    $dentistSignature = "data:image/{$imageType};base64,{$imageData}";
+                    // $dentistSignature = "data:image/{$imageType};base64,{$imageData}";
                 }
                 echo '
                                         <label>Dentist Signature</label>

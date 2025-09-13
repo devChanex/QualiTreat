@@ -324,9 +324,10 @@ error_reporting(0);
                                         <label><strong>Dentist Signature</strong></label>
                                         <div class="signature-box"
                                             style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; height: 80px; cursor: pointer;">
-                                            <img src="img/e-sign.png" alt="signature"
+                                            <img src="img/e-signature.png" alt="signature"
                                                 style="width: 100%; height: 100%; object-fit: contain;"
                                                 id="dentistSignatures">
+                                                
                                         </div>
                                     </div>
                                 </div>
