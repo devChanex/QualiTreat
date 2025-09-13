@@ -64,8 +64,8 @@ error_reporting(0);
                                 <img src="img/<?php echo $headerlogo; ?>" alt="Logo"
                                     style="max-height: 100px; margin-right: 20px;">
                                 <div>
-                                    <h4 style="margin-bottom: 5px; font-weight: bold;"> <?php echo $formheadername; ?>
-                                    </h4>
+                                    <!-- <h4 style="margin-bottom: 5px; font-weight: bold;"> <?php echo $formheadername; ?>
+                                    </h4> -->
                                     <p style="margin: 0;">
                                         <?php echo $formheaderaddress; ?><br>
                                         <?php echo $businessContact ?>
