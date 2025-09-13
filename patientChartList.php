@@ -566,7 +566,7 @@ error_reporting(0);
                                                 <option value="✔">✔- Present</option>
                                                 <option value="C">C - Caries</option>
                                                 <option value="X">X - Missing</option>
-                                                <option value="Ex">Ex - For Extraction</option>
+                                                <option value="Exo">Exo - For Extraction</option>
                                                 <option value="IM">IM - Impacted Tooth</option>
                                                 <option value="SP">Sp - Supernumerary Tooth</option>
                                                 <option value="Rf">Rf - Root Fragment</option>

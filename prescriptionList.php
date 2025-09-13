@@ -174,7 +174,11 @@ error_reporting(0);
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Patient Name</label>
-                                                <input type="text" class="form-control" name="name" id="modal-name">
+                                               <select class="form-control" name="name" id="modal-name" onchange="getProfileDetails(this.value)">
+                                                    <option value="1">profile1</option>
+                                                    <option value="2">profile2</option>
+                                                </select>
+
                                             </div>
 
                                             <div class="form-group col-md-6">
