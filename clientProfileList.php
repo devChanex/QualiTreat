@@ -63,7 +63,7 @@ error_reporting(0);
                                     <select id="searchBy" onchange="search();">
                                     <option value="">-- Select an option --</option>
                                     <option value="name">Alphabetical</option>
-                                    <option value="dateRegistered">Date Registered</option>
+                                    <option value="dateRegistered">Last Registered</option>
                                     </select>
                                     <strong>Search: </strong><input type="search" id="tableSearch"
                                         class="form-control form-control-sm" placeholder="" style="width: 300px;"
