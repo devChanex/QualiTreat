@@ -1,11 +1,14 @@
 getclientdata();
 function getclientdata() {
-
     var search = document.getElementById("tableSearch").value;
     var page = document.getElementById("currentPage").value;
+    var searchBy = document.getElementById("searchBy").value; // 👈 get dropdown value
+
     var fd = new FormData();
     fd.append("search", search);
     fd.append("page", page);
+    fd.append("searchBy", searchBy);
+
     $.ajax({
         url: "services/clientProfileListService.php",
         data: fd,
@@ -13,26 +16,22 @@ function getclientdata() {
         contentType: false,
         type: 'POST',
         success: function (result) {
-            // $('#sortableTable').DataTable().destroy();
-            // $('#sortableTable').find('tbody').append(result);
-            // $('#sortableTable').DataTable().draw();
             document.getElementById("resultResponseBody").innerHTML = result;
             getclientdataPagination();
         }
-
     });
+
     document.getElementById("content-table").style.zoom = "60%";
 }
 
 function setPage(page) {
     document.getElementById("currentPage").value = page;
     getclientdata();
-
 }
 
 function search() {
     document.getElementById("currentPage").value = 1;
-    getclientdata();
+    getclientdata(); // 👈 refresh every time search input OR dropdown changes
 }
 
 
