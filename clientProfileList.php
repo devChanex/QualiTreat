@@ -59,11 +59,10 @@ error_reporting(0);
                             <div class="card-header py-3 d-flex justify-content-between">
                                 <h6 class="m-0 font-weight-bold"></h6>
                                 <div class="d-flex align-items-center gap-2 ms-auto">
-                                   <strong>Arrange by: </strong>
+                                    <strong>Sort by: </strong>
                                     <select id="searchBy" onchange="search();">
-                                    <option value="">-- Select an option --</option>
-                                    <option value="name">Alphabetical</option>
-                                    <option value="dateRegistered">Last Registered</option>
+                                        <option value="name">Client</option>
+                                        <option value="dateRegistered">Last Registered</option>
                                     </select>
                                     <strong>Search: </strong><input type="search" id="tableSearch"
                                         class="form-control form-control-sm" placeholder="" style="width: 300px;"
