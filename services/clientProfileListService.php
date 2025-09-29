@@ -4,10 +4,10 @@ require_once('databaseService.php');
 $service = new ServiceClass();
 
 // Collect POST data
-$search     = urldecode($_POST['search'] ?? '');
-$searchBy   = $_POST['searchBy'] ?? 'name';   // default to "name" if not provided
+$search = urldecode($_POST['search'] ?? '');
+$searchBy = $_POST['searchBy'] ?? 'name';   // default to "name" if not provided
 $searchParam = '%' . $search . '%';
-$page       = isset($_POST['page']) ? (int) $_POST['page'] : 1;
+$page = isset($_POST['page']) ? (int) $_POST['page'] : 1;
 $itemPerPage = isset($_POST['item']) ? (int) $_POST['item'] : 10;
 
 // Process request
@@ -96,13 +96,13 @@ class ServiceClass
                     <td>' . $row["mobileNumber"] . '</td>
                     <td>' . ucwords($row["hmo"]) . '</td>
                     <td align="center">
-                        <a href="updateClient.php?clientid=' . $row["clientid"] . '&lname=' . $row["lname"] . '&fname=' . $row["fname"] . '" 
+                        <a href="updateClient.php?civilStatus=' . $row["civilstatus"] . '&company=' . $row["company"] . '&cardNumber=' . $row["cardnumber"] . '&hmo=' . $row["hmo"] . '&religion=' . $row["religion"] . '&clientid=' . $row["clientid"] . '&lname=' . $row["lname"] . '&fname=' . $row["fname"] . '&mname=' . $row["mdname"] . '&nick=' . $row["nickname"] . '&age=' . $age . '&sex=' . $row["sex"] . '&occupation=' . $row["occupation"] . '&birthDate=' . $row["birthDate"] . '&mobileNumber=' . $row["mobileNumber"] . '&homeAddress=' . $row["homeAddress"] . '&guardianName=' . $row["guardianName"] . '&gOccupation=' . $row["gOccupation"] . '&refferedBy=' . $row["refferedBy"] . '&emailAddress=' . $row["emailAddress"] . '&height=' . $row["height"] . '&weight=' . $row["weight"] . '"
                            class="btn btn-warning btn-circle" title="Update Client Profile">
                            <i class="fas fa-edit"></i>
                         </a>';
 
                 // Add more action buttons here (same as your original code)...
-                  echo '
+                echo '
                        <a href="medHistoryView.php?clientid=' . $row["clientid"] . '&clientname=' . $fullname . '" title="View Medical History"  class="btn btn-secondary  btn-circle"><i class="fas fa-history"></i></a>
                 ';
 
