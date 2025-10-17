@@ -46,7 +46,7 @@ class ServiceClass
    
 
     <!-- Certificate Title -->
-    <h2 style="text-align: center; font-size: 18pt; margin-top: 0; margin-bottom: 1.5em;">
+    <h2 style="white-space: pre-wrap; text-align: center; font-size: 18pt; margin-top: 0; margin-bottom: 1.5em;">
         Dental Certificate
     </h2>
 
@@ -59,16 +59,20 @@ class ServiceClass
                         ' for a ' . $row["treatment"] . '.
     </p>
 
-    <p style="text-align: 2em; margin: 0 0 1em 0;">
+    <p style="white-space: pre-wrap; text-align: justify; margin: 0 0 1em 0;">
         Upon examination, ' . $row["diagnosis"] . '.
     </p>
 
     <p style="text-align: 2em; margin: 0 0 3em 0;">
         This certification is being issued upon the request for whatever legal purpose it may serve.
     </p>
+    
+    <p style="text-align: 2em; margin: 0 0 3em 0;">
+        Thank you very much.    
+    </p>
 
     <!-- Footer Just Below Last Paragraph -->
-    <div style="text-align: right; margin-top: 2em;">
+    <div style="text-align: left; margin-top: 2em;">
            <img src="img/' . $dentistSignature . '" alt="Company Logo" style="height: 40px; display: inline-block; vertical-align: middle; margin-bottom: 0.3em;">
         <p style="margin: 0;">' . $row["dentist"] . '</p>
         <p style="margin: 0;">Attending Dentist</p>
