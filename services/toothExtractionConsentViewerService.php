@@ -26,7 +26,7 @@ class ServiceClass
     public function process($clientId, $consentType)
     {
         // ✅ Select based on both clientId and consentType
-        $query = "SELECT DISTINCT * FROM orthowaiver WHERE clientId = :a AND consentType = :b LIMIT 1";
+        $query = "SELECT Distinct * FROM orthowaiver WHERE clientId = :a AND consentType = :b LIMIT 1";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':a', $clientId);
@@ -69,7 +69,7 @@ class ServiceClass
                         style="border: 1px solid #ccc; border-radius: 4px; padding: 15px; height: 80px; cursor: pointer; text-align: center;">
                 ';
 
-                // Dentist Signature
+                  // Dentist Signature
               $imageData = base64_encode($row['dentistSignature']);
                 $imageType = "png"; // Or "png" depending on what your DB stores
                 $dentistSignature = 'img/e-signature.png';

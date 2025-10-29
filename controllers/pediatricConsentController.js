@@ -1,13 +1,13 @@
-loadOrtho();
-function loadOrtho() {
+loadPediatric();
+function loadPediatric() {
     var clientId = document.getElementById("clientId").value;
-        var consentType = "Ortho Waiver";
+    var consentType = "Pediatric Consent";
     var fd = new FormData();
     fd.append('clientId', clientId);
      fd.append('consentType', consentType);
 
     $.ajax({
-        url: "services/orthowaiverViewerService.php",
+        url: "services/pediatricConsentViewerService.php",
         data: fd,
         processData: false,
         contentType: false,
@@ -23,3 +23,4 @@ function loadOrtho() {
         }
     });
 }
+

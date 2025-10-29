@@ -1,6 +1,5 @@
 <?php
-session_start();
-error_reporting(0);
+include_once("bars/properties.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +12,7 @@ error_reporting(0);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>QualiTreat Dental Clinic</title>
+    <title><?php echo $systemname; ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -23,9 +22,13 @@ error_reporting(0);
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-
     <link href="css/custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS (with Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </head>
 
@@ -33,61 +36,50 @@ error_reporting(0);
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-        <?php include_once('bars/sidebar.php'); ?>
-
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
-                <?php include_once('bars/topbar.php'); ?>
 
-
+                <?php include_once("bars/toast.php"); ?>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <div class="card shadow mb-12">
-                        <div class="card-header <?php echo $cards; ?>">
-                            View Orthodontics Waiver
-<a href="consentList1.php"><button class="btn btn-secondary btn-sm btn-circle float-right"
-                                         title="Back to List">
-                                    
-                                        <i class="fas fa-times-circle"></i></button></a>
-                            <button id="divPrinter" class="btn btn-success btn-sm btn-circle float-right"
-                                onclick="printDiv('bodyResult')" title="Print E-SOA"><i
-                                    class="fas fa-print"></i></button>
-                        </div>
-                        <div class="card-body" id="bodyResult">
 
-                            <input type="hidden" value="<?php echo $_GET['clientId']; ?>" id="clientId">
 
-                            <div style="display: flex; align-items: center; margin-left: 50px;">
+                    <!-- Nav Tabs -->
+                    <ul class="nav nav-tabs" id="myTabs" role="tablist" style="display:none;">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab"
+                                aria-controls="tab1" aria-selected="false">Step 1</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content mt-4" id="myTabsContent">
+
+
+                        <!--tab 3-->
+                        <div class="tab-pane fade show active" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                            <div class="col-lg-12 d-flex align-items-center" style="margin:50px;">
                                 <img src="img/<?php echo $headerlogo; ?>" alt="Logo"
-                                    style="max-height: 100px; margin-right: 20px;">
+                                    style="max-height:100px; margin-right: 20px;">
                                 <div>
-                                    <!-- <h4 style="margin-bottom: 5px; font-weight: bold;"> <?php echo $formheadername; ?>
-                                    </h4> -->
-                                    <p style="margin: 0;">
-                                        <?php echo $formheaderaddress; ?>
-                                        <br>
-                                        <?php echo $businessContact; ?>
-                                    </p>
+                                  <p class="mb-0"><?php echo $formheaderaddress; ?></p>
+                                <p class="mb-0"><?php echo $contactnum; ?></p>
+
                                 </div>
                             </div>
 
-
                             <!-- Page Heading -->
-                            <div style="text-align:center;">
-                                <h1 class="h3">Patient Informed Consent and Information</h1>
-                                <p><strong>Potential Risks and Limitations of Orthodontic Treatment </strong></p>
-
-                            </div>
-
-
+                            <h1 class="h3 mb-4 text-center">Patient Informed Consent and Information</h1>
+                            <p class="text-center"><strong>Potential Risks and Limitations of Orthodontic
+                                    Treatment</strong></p>
                             <!-- Consent Card -->
-                            <div style="margin-left:50px;margin-right:50px;text-align:justify;">
+                            <div class="text-justify" style="margin:50px;">
 
 
 
@@ -157,31 +149,105 @@ error_reporting(0);
 
 
 
+
+
                             <!-- Signature Area -->
-                            <form>
-                                <div style="display: flex; flex-wrap: wrap; margin-left: 50px;" id="waiverDetails">
+                            <form class="mt-4">
+                                <div class="form-row" style="margin:50px;">
+                                    <div class="form-group col-md-6">
+                                        <label for="dateSigned">Date</label>
+                                        <input type="date" class="form-control" id="dateSigned">
+                                        <label for="dateSigned">Patient's/Guardian's Name</label>
+                                        <input list="patients" name="patient" id="patientName" class="form-control"
+                                            onchange="getSelectedPatientId(this);">
+                                        <datalist id="patients">
+
+                                        </datalist>
+                                        <input type="hidden" id="patientId" name="patientId">
+                                        <label>Patient's/Guardian's Signature</label>
+                                        <div class="border rounded p-3 signature-box"
+                                            style="height: 80px; cursor: pointer;" id="patient-signature-box" onclick="openSignatureModal(function(sigData) {
+                 setSignature('patient', sigData);
+             })">
+                                        </div>
+                                        <input type="hidden" name="patient_signature" id="patient-signature-input">
+
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <br>
+                                        <br><br>
+                                        <label for="dentist">Dentist's Name</label>
+
+
+                                        <input list="dentists" name="dentist" id="dentistName" class="form-control"
+                                            onchange="setDentistSignature();" value="Dr. Ann Jeth D. Timbol" readonly>
+                                        <datalist id="dentists">
+                                            <?php
+                                            include_once("bars/properties.php");
+                                            foreach ($dentist as $d) {
+                                                echo '<option value="' . htmlspecialchars($d) . '">';
+                                            }
+                                            ?>
+                                        </datalist>
+                                        <label>Dentist Signature</label>
+                                        <div class="border rounded p-3 signature-box text-center"
+                                            style="height: 80px; cursor: pointer;" id="dentist-signature-box" >
+
+                                        </div>
+                                        <input type="hidden" name="dentist_signature" id="dentist-signature-input" value="img/' . $dentistSignature . '" alt="Company Logo" style="height: 40px; display: inline-block; vertical-align: middle; margin-bottom: 0.3em;">
+                                        
+                                    </div>
 
                                 </div>
 
+                                <div class="form-row mt-3">
+                                    <div class="form-group col-md-6">
+                                    </div>
+                                    <div class="form-group col-md-6">
 
-
+                                    </div>
+                                </div>
 
 
                             </form>
 
 
 
+                            <div id="signature-modal">
+                                <div class="modal-content">
+                                    <h3>Draw your Signature</h3>
+                                    <canvas id="signature-pad"></canvas><br>
+                                    <button onclick="clearPad()">Clear</button>
+                                    <button onclick="confirmSignature()">Done</button>
+                                    <button onclick="closeSignatureModal()">Cancel</button>
+                                </div>
+                            </div>
 
+                            <footer class="sticky-footer">
+                                <div class="container my-auto">
+                                    <div class="copyright text-center my-auto">
 
+                                        <a href="consentList1.php" class="btn btn-danger btn-icon-split">
+                                            <span class="icon text-white-50"><i class="fas fa-fw fa-times"></i></span>
+                                            <span class="text">Close</span>
+                                        </a>
+                                        <a href="#" class="btn btn-success btn-icon-split"
+                                            onclick="submitConsentform();">
+                                            <span class="icon text-white-50"><i class="fas fa-fw fa-save"></i></span>
+                                            <span class="text">Submit</span>
+                                        </a>
 
+                                    </div>
+                                </div>
+                            </footer>
 
 
                             <!-- END OF YOUR ADDITIONAL CODE SNIPPET -->
                         </div>
                     </div>
-
                 </div>
-                <!-- /.container-fluid -->
+
+                <!-- Page Heading -->
 
             </div>
             <!-- End of Main Content -->
@@ -197,12 +263,20 @@ error_reporting(0);
 
             <!-- Custom scripts for all pages-->
             <script src="js/sb-admin-2.min.js"></script>
-            <script src="controllers/logOutConroller.js"></script>
-            <script src="controllers/sessionController.js"></script>
-            <script src="controllers/orthowaiverController.js"></script>
-            <script src="controllers/divPrinterController-v1.js"></script>
 
-            <script src="js/custom-v2.js"></script>
+            <script src="js/camera.js"></script>
+            <script src="js/custom-v1.js"></script>
+            <script src="js/signature.js"></script>
+
+
+            <script>
+                const dentistSignatures = <?php echo json_encode(array_combine($dentist, $dentistSignature)); ?>;
+            </script>
+            <script src="controllers/activityLogsController.js"></script>
+            <script src="controllers/waiverController-v2.js"></script>
+
+
+
 </body>
 
 </html>

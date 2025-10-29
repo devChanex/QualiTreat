@@ -13,6 +13,7 @@ $superuser = "nikesarmiento";
 $businessContact = "📞09458734468";
 $dentist = ["Dr. Ann Jeth D. Timbol"];
 $licensenum = "51755";
-$dentistSignature = "e-signature.png";
+$dentistSignature = ["e-signature.png"];
 $ptr ="2118470";
+$contactnum ="📞09458734468";
     ?>
