@@ -73,9 +73,9 @@ if ($stmt2->rowCount() > 0) {
         if ($row2["consentType"] === "Ortho Waiver") {
             echo '<a href="viewOrthoWaiver.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View Orthodontics Waiver"><i class="fas fa-sign"></i></a>';
         } elseif ($row2["consentType"] === "Pediatric Consent") {
-            echo '<a href="viewPediatricConsent.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View Pediatric Consent"><i class="fas fa-sign"></i></a>';
+            echo '<a href="viewPediatricConsent.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View Pediatric Consent"><i class="fas fa-child"></i></a>';
         } elseif ($row2["consentType"] === "Tooth Extraction Consent") {
-            echo '<a href="viewToothExtractionConsent.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View Tooth Extraction Consent"><i class="fas fa-sign"></i></a>';
+            echo '<a href="viewToothExtractionConsent.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View Tooth Extraction Consent"><i class="fas fa-tooth"></i></a>';
         } else {
             echo '<a href="#" class="btn bg-secondary btn-circle" title="Unknown Consent Type"><i class="fas fa-question"></i></a>';
         }
