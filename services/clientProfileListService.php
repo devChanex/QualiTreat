@@ -118,10 +118,11 @@ class ServiceClass
                     }
 
                 }
-
-                $query2 = "select clientId from orthowaiver where clientid=:a limit 1";
+                //query for Ortho
+                $query2 = "select clientId, consentType from orthowaiver where clientid=:a AND consentType='Ortho Waiver' limit 1";
                 $stmt2 = $this->conn->prepare($query2);
                 $stmt2->bindParam(':a', $row["clientid"]);
+                
                 $stmt2->execute();
                 if ($stmt2->rowCount() > 0) {
 
@@ -131,7 +132,34 @@ class ServiceClass
                     }
 
                 }
+                //query for Pediatric
+                 $query2 = "select clientId, consentType from orthowaiver where clientid=:a AND consentType='Pediatric Consent' limit 1";
+                $stmt2 = $this->conn->prepare($query2);
+                $stmt2->bindParam(':a', $row["clientid"]);
+                
+                $stmt2->execute();
+                if ($stmt2->rowCount() > 0) {
 
+                    while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+                        echo '<a href="viewPediatricConsent.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View Pediatric Consent"><i class="fas fa-child"></i></a>
+                        ';
+                    }
+
+                }
+                //query for Tooth Extraction
+                 $query2 = "select clientId, consentType from orthowaiver where clientid=:a AND consentType='Tooth Extraction Consent' limit 1";
+                $stmt2 = $this->conn->prepare($query2);
+                $stmt2->bindParam(':a', $row["clientid"]);
+                
+                $stmt2->execute();
+                if ($stmt2->rowCount() > 0) {
+
+                    while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+                        echo '<a href="viewToothExtractionConsent.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View ToothExtraction Consent"><i class="fas fa-tooth"></i></a>
+                        ';
+                    }
+
+                }
 
                 echo '
                 <a href="addTreatmentHistory.php?company=' . $row["company"] . '&cardnumber=' . $row["cardnumber"] . '&hmo=' . $row["hmo"] . '&clientid=' . $row["clientid"] . '&birthDate=' . $row["birthDate"] . '&clientname=' . $fullname . '&age=' . $age . '&address=' . $row["homeAddress"] . '" class="btn btn-warning btn-circle" title="Add Treatment"><i class="fas fa-plus"></i></a>
