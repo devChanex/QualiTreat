@@ -73,7 +73,7 @@ class ServiceClass
 
     <!-- Footer Just Below Last Paragraph -->
     <div style="text-align: left; margin-top: 2em;">
-           <img src="img/' . $dentistSignature . '" alt="Company Logo" style="height: 40px; display: inline-block; vertical-align: middle; margin-bottom: 0.3em;">
+          <br>
         <p style="margin: 0;">' . $row["dentist"] . '</p>
         <p style="margin: 0;">Attending Dentist</p>
         <p style="margin: 0;">License No. ' . $row["license"] . '</p>
