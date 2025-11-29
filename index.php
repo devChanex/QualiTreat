@@ -52,17 +52,18 @@ include_once("bars/properties.php");
                         <div class="d-flex align-items-center">
                             <img src="img/<?php echo $headerlogo; ?>" alt="Logo"
                                 style="max-height:100px; margin-right: 20px;">
-                            <div>
-                                <p class="mb-0"><?php echo $formheaderaddress; ?></p>
-                                <p class="mb-0"><?php echo $contactnum; ?></p>
-                            </div>
+                           
                         </div>
 
                         <!-- Right Side: Back Button -->
-                        <a href="waiver.php" class="btn btn-warning btn-icon-split">
+                        <!-- <a href="waiver.php" class="btn btn-warning btn-icon-split">
                             <span class="icon text-white-50"><i class="fas fa-fw fa-sign"></i></span>
                             <span class="text">Ortho Waiver</span>
-                        </a>
+                        </a> -->
+                         <div>
+                                <p class="mb-0"><?php echo $formheaderaddress; ?></p>
+                                <p class="mb-0"><?php echo $contactnum; ?></p>
+                            </div>
                     </div>
 
 
