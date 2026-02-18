@@ -167,7 +167,7 @@ error_reporting(0);
             <script src="controllers/logOutConroller.js"></script>
             <script src="controllers/sessionController.js"></script>
             <script src="controllers/activityLogsController.js"></script>
-            <script src="controllers/soaViewingController-v8.js"></script>
+            <script src="controllers/soaViewingController-v9.js"></script>
             <script src="controllers/divPrinterController-v1.js"></script>
             <script src="js/signature.js"></script>
             <script src="js/custom-v2.js"></script>
