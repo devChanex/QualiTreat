@@ -9,7 +9,7 @@
 
 
 //prod
-$hostname = "216.218.206.42";
+$hostname = "localhost";
 $username = "qualitre_admin";
 $password = 'wD?j{)4yY+UML&b#';
 $database = 'qualitre_sysdb';

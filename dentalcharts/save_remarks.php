@@ -12,7 +12,7 @@ if (strpos($image, 'data:image/png;base64,') === 0) {
 $image = base64_decode($image);
 
 // $conn = new mysqli("localhost", "root", "", "qualitreat_db");
-$conn = new mysqli("216.218.206.42", "qualitre_admin", "wD?j{)4yY+UML&b#", "qualitre_sysdb");
+$conn = new mysqli("localhost", "qualitre_admin", "wD?j{)4yY+UML&b#", "qualitre_sysdb");
 
 if ($conn->connect_error) {
     echo json_encode(["status" => "error", "message" => $conn->connect_error]);
