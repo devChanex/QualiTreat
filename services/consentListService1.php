@@ -76,7 +76,9 @@ if ($stmt2->rowCount() > 0) {
             echo '<a href="viewPediatricConsent.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View Pediatric Consent"><i class="fas fa-child"></i></a>';
         } elseif ($row2["consentType"] === "Tooth Extraction Consent") {
             echo '<a href="viewToothExtractionConsent.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View Tooth Extraction Consent"><i class="fas fa-tooth"></i></a>';
-        } else {
+        }elseif ($row2["consentType"] === "Dental Crowns / Bridges / Onlays / Inlays") {
+            echo '<a href="viewDboiWaiver.php?clientId=' . $row2["clientId"] . '" class="btn bg-purple btn-circle" title="View Dental Crowns / Bridges / Onlays / Inlays Consent"><i class="fas fa-crown"></i></a>';
+        }else {
             echo '<a href="#" class="btn bg-secondary btn-circle" title="Unknown Consent Type"><i class="fas fa-question"></i></a>';
         }
     }

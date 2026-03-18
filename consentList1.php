@@ -139,13 +139,28 @@ error_reporting(0);
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="consent" id="consent2" value="Orthodontic Waiver">
+            <input class="form-check-input" type="radio" name="consent" id="consent3" value="Orthodontic Waiver">
             <label class="form-check-label" for="consent3">
               Orthodontic Waiver
             </label>
           </div>
+             <div class="form-check">
+            <input class="form-check-input" type="radio" name="consent" id="consent4" value="Dental Crowns / Bridges / Onlays / Inlays">
+            <label class="form-check-label" for="consent4">
+              Informed Consent Form for Dental Crowns / Bridges / Onlays / Inlays
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="consent" id="consent5" value="Root Canal Treatment"> 
+            <label class="form-check-label" for="consent5">
+              Root Canal Treatment
+            </label>
+          </div>
         </form>
       </div>
+
+    
+    
       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -190,7 +205,7 @@ error_reporting(0);
             <script src="controllers/logOutConroller.js"></script>
             <script src="controllers/sessionController.js"></script>
             <script src="controllers/activityLogsController.js"></script>
-            <script src="controllers/consentListController1.js"></script>
+            <script src="controllers/consentListController2.js"></script>
             <!-- <script src="controllers/deleteClientProfileController.js"></script> -->
             <script src="js/sortable.js"></script>
 

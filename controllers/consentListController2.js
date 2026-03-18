@@ -76,6 +76,12 @@ function submitConsent() {
      else if (selected.value === "Orthodontic Waiver") {
       window.location.href = "waiver.php";
     }
+    else if (selected.value === "Dental Crowns / Bridges / Onlays / Inlays") {
+      window.location.href = "dboi.php";
+    }
+    else if (selected.value === "Root Canal Treatment") {
+      window.location.href = "rootCanalTreatment.php";
+    }
 
     $('#pickConsentType').modal('hide');
   } else {
