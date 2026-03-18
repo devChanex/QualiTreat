@@ -70,7 +70,7 @@ error_reporting(0);
                              <!-- Page Heading -->
                             <center> <img src="img/<?php echo $headerlogo; ?>" alt="Logo"
                                     style="max-height:100px;">
-                            <h1 class="h3 mb-4 text-center">INFORMED CONSENT FORM FOR ENDODONTIC TREATMENT (ROOT CANAL TREATMENT)</h1></center>
+                            <h1 class="h3 mb-4 text-center">INFORMED CONSENT FORM FOR ENDODONTIC TREATMENT <br>(ROOT CANAL TREATMENT)</h1></center>
                             
                             <!-- Consent Card -->
                             <div class="text-justify" style="margin:30px;">
@@ -152,7 +152,7 @@ error_reporting(0);
             <script src="js/sb-admin-2.min.js"></script>
             <script src="controllers/logOutConroller.js"></script>
             <script src="controllers/sessionController.js"></script>
-            <script src="controllers/toothExtractionConsentController.js"></script>
+            <script src="controllers/rootCanalTreatmentConsentController.js"></script>
             <script src="controllers/divPrinterController-v1.js"></script>
 
             <script src="js/custom-v2.js"></script>

@@ -201,7 +201,7 @@ include_once("bars/properties.php");
                                             <span class="text">Close</span>
                                         </a>
                                         <a href="#" class="btn btn-success btn-icon-split"
-                                            onclick="submitToothExtractionConsentform();">
+                                            onclick="submitRootCanalConsentform();">
                                             <span class="icon text-white-50"><i class="fas fa-fw fa-save"></i></span>
                                             <span class="text">Submit</span>
                                         </a>

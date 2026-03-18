@@ -201,6 +201,55 @@ function submitDboiConsentform() {
     });
 }
 
+//Submit form for ROOT CANAL TREATMENT Consent
+function submitRootCanalConsentform() {
+    var dateSigned = document.getElementById("dateSigned").value;
+    var dentistSignature = document.getElementById("dentist-signature-input").value;
+    var patientName = document.getElementById("patientName").value;
+    var patientSignature = document.getElementById("patient-signature-input").value;
+    var dentistName = document.getElementById("dentistName").value;
+    var clientId = document.getElementById("patientId").value;
+
+    if (dateSigned == "" || patientSignature == "" || dentistName == "" || patientName == "") {
+        toastError("Please fill in all fields.");
+        return;
+    } else if (clientId == "") {
+        toastError("Patient not registered.");
+        return;
+    } else if (dentistName != "Dr. Nikki Sarmiento" && dentistSignature == "") {
+        toastError("Please provide a dentist signature.");
+        return;
+    }
+
+
+    var fd = new FormData();
+    fd.append('dateSigned', dateSigned);
+    fd.append('dentistSignature', dentistSignature);
+    fd.append('patientSignature', patientSignature);
+    fd.append('dentistName', dentistName);
+    fd.append('patientName', patientName);
+    fd.append('clientId', clientId);
+    $.ajax({
+        url: "services/addRootCanalWaiverService.php",
+        data: fd,
+        processData: false,
+        contentType: false,
+        type: 'POST',
+        success: function (result) {
+            result = result.trim();
+            if (result == "success") {
+                message += "Consent Waiver Successfully Added.";
+                toastSuccess(message);
+                setTimeout(() => location.reload(), 3000);
+
+            } else {
+                toastError(result);
+            }
+            logThis("Registration - Ortho Waiver", fd, result);
+        }
+    });
+}
+
 //Submit form for Tooth Extraction Consent
 function submitToothExtractionConsentform() {
     var dateSigned = document.getElementById("dateSigned").value;
