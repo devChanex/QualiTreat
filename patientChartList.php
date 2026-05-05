@@ -585,6 +585,9 @@ error_reporting(0);
                                                 <option value="Abf ">Abf - Abfraction</option>
                                                 <option value="Abr">Abr - Abrasion</option>
                                                 <option value="V">V - Veneer</option>
+                                                <option value="PFM">PFM - Crown</option>
+                                                <option value="ZIR">ZIR - Zirconia Crown</option>
+                                                <option value="PL">PL - Peg Lateral</option>
 
                                             </select>
                                         </div>
