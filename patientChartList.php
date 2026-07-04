@@ -582,6 +582,15 @@ error_reporting(0);
                                                 <option value="PFS">PFS - Pit & Fissure Sealant</option>
                                                 <option value="Rm">Rm - Removable Denture</option>
                                                 <option value="RCT">RCT - Root Canal Treated</option>
+                                                <option value="Abf ">Abf - Abfraction</option>
+                                                <option value="Abr">Abr - Abrasion</option>
+                                                <option value="V">V - Veneer</option>
+                                                <option value="PFM">PFM - Crown</option>
+                                                <option value="ZIR">ZIR - Zirconia Crown</option>
+                                                <option value="PL">PL - Peg Lateral</option>
+                                                <option value="Co/C">Co/C - Co with caries</option>
+                                                <option value="Co/Am">Co/Am - Am with caries</option>
+
 
                                             </select>
                                         </div>

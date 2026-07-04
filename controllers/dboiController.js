@@ -1,13 +1,13 @@
-loadOrtho();
-function loadOrtho() {
+loadDBoiConsent();
+function loadDBoiConsent() {
     var clientId = document.getElementById("clientId").value;
-        var consentType = "Ortho Waiver";
+    var consentType = "Dental Crowns / Bridges / Onlays / Inlays";
     var fd = new FormData();
     fd.append('clientId', clientId);
      fd.append('consentType', consentType);
 
     $.ajax({
-        url: "services/orthowaiverViewerService.php",
+        url: "services/dboiConsentViewService.php",
         data: fd,
         processData: false,
         contentType: false,
@@ -23,3 +23,4 @@ function loadOrtho() {
         }
     });
 }
+

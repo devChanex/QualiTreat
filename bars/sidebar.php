@@ -53,6 +53,13 @@ if ($_SESSION["account_type"] == 0) {
     </a>
    
     </li>
+     <li class="nav-item">
+    <a class="nav-link" href="consentList1.php" >
+        <i class="fas fa-signature"></i>
+        <span>Consent List</span>
+    </a>
+   
+    </li>
 
       <li class="nav-item">
     <a class="nav-link" href="dentalcertList.php" >
@@ -171,6 +178,14 @@ if ($_SESSION["account_type"] == 0) {
     </a>
    
     </li>
+      </li>
+     <li class="nav-item">
+    <a class="nav-link" href="consentList1.php" >
+        <i class="fas fa-signature"></i>
+        <span>Consent List</span>
+    </a>
+   
+    </li>
 
       <li class="nav-item">
     <a class="nav-link" href="dentalcertList.php" >
@@ -281,6 +296,15 @@ if ($_SESSION["account_type"] == 0) {
     </a>
    
     </li>
+
+    <li class="nav-item">
+    <a class="nav-link" href="consentList1.php" >
+        <i class="fas fa-signature"></i>
+        <span>Consent List</span>
+    </a>
+   
+    </li>
+
      <li class="nav-item">
     <a class="nav-link" href="dentalcertList.php" >
         <i class="fas fa-certificate"></i>
@@ -350,8 +374,16 @@ if ($_SESSION["account_type"] == 0) {
         <i class="fas fa-notes-medical"></i>
         <span>Prescription</span>
     </a>
+    </li>
+
+    <li class="nav-item">
+    <a class="nav-link" href="consentList1.php" >
+        <i class="fas fa-signature"></i>
+        <span>Consent List</span>
+    </a>
    
     </li>
+
      <li class="nav-item">
     <a class="nav-link" href="dentalcertList.php" >
         <i class="fas fa-certificate"></i>
