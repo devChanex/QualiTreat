@@ -83,7 +83,7 @@ class ServiceClass
                     FROM clientprofile cp
                     INNER JOIN treatmentsub tsub ON tsub.clientid = cp.clientid
                     INNER JOIN treatmentsoa tsoa ON tsoa.soaid = tsub.soaid
-                    WHERE tsoa.date <= DATE_SUB(:a, INTERVAL 5 MONTH)
+                    WHERE tsoa.date <= DATE_SUB(:a, INTERVAL 6 MONTH)
                       AND LOWER(tsub.treatment) LIKE '%oral prophylaxis%'
                       AND tsub.tsubid = (
                           SELECT tsub2.tsubid
