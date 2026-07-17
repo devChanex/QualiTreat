@@ -589,7 +589,7 @@ error_reporting(0);
                                                 <option value="ZIR">ZIR - Zirconia Crown</option>
                                                 <option value="PL">PL - Peg Lateral</option>
                                                 <option value="Co/C">Co/C - Co with caries</option>
-                                                <option value="Co/Am">Co/Am - Am with caries</option>
+                                                <option value="C/Am">C/Am - Am with caries</option>
 
 
                                             </select>
